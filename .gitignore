@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.log
+
+# Virtual env
+.venv/
+venv/
+env/
+.env/
+
+# Derlenmiş/ara
+*.pkl
+*.npz
+*.joblib
+
+# Üretim/çıktı dosyaları
+out.json
+previous_outs/
+
+# OS/IDE
+.DS_Store
+.vscode/
+.idea/
