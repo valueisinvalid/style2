@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python
 __pycache__/
 *.py[cod]
@@ -23,3 +24,6 @@ previous_outs/
 .DS_Store
 .vscode/
 .idea/
+=======
+.venv/
+>>>>>>> 53f6ff9 (last updates)
