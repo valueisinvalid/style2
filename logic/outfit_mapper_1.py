@@ -61,6 +61,79 @@ def _clo(item: Dict[str, Any], default: float = 0.3) -> float:
         return default
 
 
+# -------------------------------------------------
+# Text & coverage helper utilities (weather-aware)
+# -------------------------------------------------
+
+def _txt_blob(it: Dict[str, Any]) -> str:
+    return (
+        (it.get("fabric_composition", "") or "") + " " +
+        (it.get("type", "") or "") + " " +
+        (it.get("name", "") or "") + " " +
+        (it.get("description", "") or "") + " " +
+        " ".join([f"{k}:{v}" for k, v in (it.get("key_value_description") or {}).items()])
+    ).lower()
+
+# keyword groups
+_KNIT_KEYS = ["knit", "knitted", "sweater", "jumper", "cardigan", "fleece", "pullover"]
+_WARM_MAT = [
+    "wool", "cashmere", "mohair", "alpaca", "angora", "acrylic", "pile", "teddy", "sherpa", "shearling", "faux fur"
+]
+_COLD_HOSTILE_BOTTOM = ["skirt"]  # skater, pencil, mini, midi vb. alt tipleri kapsar
+
+
+def _is_sleepless_hint(t: str) -> bool:
+    return any(k in t for k in ["sleeveless", "camisole", "tank", "vest", "halter"])
+
+
+def _coverage_top(it: Dict[str, Any]) -> float:
+    """
+    0.0–1.0 aralığında yaklaşık kol ve boyun kapatıcılığı ölçümü.
+    """
+    t = _txt_blob(it)
+    cov = 0.5
+    if "long sleeve" in t:
+        cov = 1.0
+    elif "3/4" in t:
+        cov = 0.7
+    elif "short sleeve" in t:
+        cov = 0.4
+    if "turtleneck" in t or "high neck" in t:
+        cov += 0.1
+    if "sleeveless" in t or _is_sleepless_hint(t):
+        cov = 0.2
+    return max(0.0, min(1.1, cov))
+
+
+def _coverage_bottom(it: Dict[str, Any]) -> float:
+    """
+    0.0–1.0: bacak kapatıcılığı (pantolon=1.0; midi=0.6; mini=0.3).
+    Astarlı/termal/wool katkısı +0.1
+    """
+    t = _txt_blob(it)
+    # temel kapsama
+    if any(k in t for k in ["trouser", "pant", "jean", "leggings", "jogger", "chino"]):
+        cov = 1.0
+    else:
+        # etek uzunluğu tahmini
+        if "ankle length" in t or "long" in t:
+            cov = 0.8
+        elif "midi" in t or "calf" in t:
+            cov = 0.6
+        elif "mini" in t or "above knee" in t:
+            cov = 0.3
+        else:
+            cov = 0.5
+    if any(k in t for k in ["thermal", "fleece", "wool", "lined"]):
+        cov += 0.1
+    return max(0.0, min(1.1, cov))
+
+
+def _is_knit_warm_top(it: Dict[str, Any]) -> bool:
+    t = _txt_blob(it)
+    return any(k in t for k in _KNIT_KEYS) or any(k in t for k in _WARM_MAT)
+
+
 @dataclass(frozen=True)
 class Outfit:
     top: Dict[str, Any]
@@ -105,13 +178,45 @@ def _resolve_existing_path(candidates: List[Path]) -> Optional[Path]:
 
 def _fallback_target_clo(weather: Dict[str, Any]) -> float:
     t = float(weather.get("temp_c", 18.0))
-    if t <= 0: return 1.5
-    if t <= 5: return 1.3
-    if t <= 10: return 1.1
-    if t <= 15: return 0.9
-    if t <= 20: return 0.7
-    if t <= 25: return 0.5
-    return 0.3
+    rh = float(weather.get("rh", weather.get("humidity", 50.0)))
+    wind = float(weather.get("wind", weather.get("wind_kmh", 5.0)))
+    rain = float(weather.get("rain", weather.get("precip_mm", 0.0)))
+
+    # Yağış ihtimali veya mevcut yağış bilgisi
+    is_snow_or_rain: bool = bool(weather.get("is_rain", False)) or float(weather.get("precip_prob", 0.0)) >= 60.0 or rain >= 0.5
+
+    # Sıcaklığa bağlı baz clo değeri
+    if t <= -5:
+        base = 1.9
+    elif t <= 0:
+        base = 1.6
+    elif t <= 5:
+        base = 1.3
+    elif t <= 10:
+        base = 1.1
+    elif t <= 15:
+        base = 0.9
+    elif t <= 20:
+        base = 0.7
+    elif t <= 25:
+        base = 0.5
+    else:
+        base = 0.3
+
+    # Rüzgâr (wind chill) etkisi: 8 km/h üzeri her 10 km/h için +0.10
+    if wind > 8:
+        base += 0.10 * ((wind - 8.0) / 10.0)
+
+    # Yağış/sulu kar etkisi
+    if is_snow_or_rain:
+        base += 0.25
+
+    # Yüksek nem soğukta hissi artırır
+    if t <= 5 and rh >= 80:
+        base += 0.10
+
+    # Kapak değerler
+    return float(max(0.3, min(base, 2.4)))
 
 def estimate_target_clo(weather: Dict[str, Any]) -> float:
     if get_target_clo is not None:
@@ -239,8 +344,11 @@ def enrich_items(items: List[Dict[str, Any]], verbose: bool=True) -> List[Dict[s
                     heur = 0.6  # generic outer layer
 
             elif r == "top":
-                if any(k in (t + nm + desc) for k in ["hoodie", "sweater", "jumper", "fleece", "cardigan", "knit"]):
-                    heur = 0.6
+                blob = (str(base.get("type", "")) + " " + str(base.get("name", "")) + " " + str(base.get("description", ""))).lower()
+                if any(k in blob for k in ["hoodie", "sweater", "jumper", "fleece", "cardigan", "knit"]):
+                    heur = 0.7  # knit & similar considered warmer
+                    if any(k in blob for k in ["wool", "cashmere", "alpaca", "mohair", "angora", "sherpa", "teddy", "pile"]):
+                        heur = 0.8  # high warmth knit
                 elif _is_sleeveless(base) or any(
                     k in (t + nm + desc) for k in ["t-shirt", "tee", "camisole", "tank", "vest"]
                 ):
@@ -326,6 +434,97 @@ class OutfitMapper:
         tops_f = [t for t in tops if self._within_clo(target*0.5, float(t.get("clo", 0.3)), tol=0.6)]
         bottoms_f = [b for b in bottoms if self._within_clo(target*0.5, float(b.get("clo", 0.3)), tol=0.6)]
         outers_f = [o for o in outers if _clo(o) >= 0.2]
+
+        # ---- Cold guards: zayıf kumaşları eleyip uzun kolu zorunlu kıl ----
+        def _blob(it):
+            return (
+                (it.get("fabric_composition", "") or "") + " " +
+                (it.get("type", "") or "") + " " +
+                (it.get("name", "") or "") + " " +
+                (it.get("description", "") or "") + " " +
+                " ".join([f"{k}:{v}" for k, v in (it.get("key_value_description") or {}).items()])
+            ).lower()
+
+        try:
+            temp_c = float(weather.get("temp_c", 18.0))
+        except Exception:
+            temp_c = 18.0
+
+        cold = (temp_c <= 12.0) or (target >= 1.0)
+        very_cold = (temp_c <= 0.0) or (target >= 1.6)
+        wet = bool(weather.get("is_rain", False)) or float(weather.get("precip_prob", 0.0)) >= 60.0 or float(weather.get("rain", 0.0)) >= 0.5
+
+        # ---- Hard guard: skirts in deep-cold need lining/warmth ----
+        def _is_skirt(it):
+            return "skirt" in _txt_blob(it)
+
+        def _is_warm_bottom(it):
+            t = _txt_blob(it)
+            return any(k in t for k in ["wool", "fleece", "thermal", "lined"]) or "skort" in t  # skort built-in shorts
+
+        if very_cold or (cold and wet):
+            pre_b = bottoms_f[:]
+            bottoms_f = [b for b in bottoms_f if (not _is_skirt(b)) or _is_warm_bottom(b)]
+            if not bottoms_f:
+                bottoms_f = pre_b  # don't empty the pool completely
+
+        if cold:
+            weak_tops: List[Dict[str, Any]] = []
+            strong_tops: List[Dict[str, Any]] = []
+            for t in tops_f:
+                txt = _blob(t)
+                # zayıf kumaş: viscose/rayon/modal/lyocell/linen/silk veya 3/4 sleeve/short sleeve
+                weak = any(k in txt for k in [
+                    "viscose", "rayon", "modal", "lyocell", "linen", "silk", "3/4 sleeve", "short sleeve"
+                ])
+                # kolsuzlar zaten yukarıda eleniyor (gerekirse)
+                if very_cold and weak:
+                    weak_tops.append(t)
+                else:
+                    strong_tops.append(t)
+            if strong_tops:
+                tops_f = strong_tops  # boşaltmıyorsa zayıfları çıkar
+
+            # Altlar: çok soğuk/ıslaksa denim ve bilek boyu/bol paça dezavantaj
+            strong_bottoms: List[Dict[str, Any]] = []
+            for b in bottoms_f:
+                txt = _blob(b)
+                is_jeans = ("jean" in txt or "denim" in txt)
+                ankle = ("ankle length" in txt)
+                wide = ("wide" in txt and "leg" in txt)
+                lined = any(k in txt for k in ["wool", "fleece", "thermal", "lined"])
+                if very_cold and wet:
+                    # çok soğuk ve ıslakta: astarlı/termal olanları öne al
+                    if lined:
+                        strong_bottoms.append(b)
+                    else:
+                        # jeans/ankle/wide kötü durumda: dışarıda bırak
+                        if not (is_jeans or ankle or wide):
+                            strong_bottoms.append(b)
+                else:
+                    strong_bottoms.append(b)
+            if strong_bottoms:
+                bottoms_f = strong_bottoms
+
+        # ---- Cold preference: knit & pants tercihleri ----
+        if cold:
+            # ÜST: knit/warm materyal tercih et (boşaltıyorsa geri dön).
+            pre_tops = tops_f[:]
+            pref_tops = [t for t in tops_f if _is_knit_warm_top(t)]
+            if pref_tops:
+                tops_f = pref_tops
+            else:
+                tops_f = pre_tops  # tamamen boşaltma
+
+            # ALT: pantolon/leggings öncelik ver (boşaltıyorsa geri dön).
+            pre_bottoms = bottoms_f[:]
+            pref_bottoms = [b for b in bottoms_f if any(k in _txt_blob(b) for k in [
+                "trouser", "pant", "jean", "leggings", "jogger", "chino"
+            ])]
+            if pref_bottoms:
+                bottoms_f = pref_bottoms
+            else:
+                bottoms_f = pre_bottoms
 
         # ---------------------------------------------
         # Weather sanity: in chilly weather (≤12 °C) or
@@ -438,6 +637,8 @@ class OutfitMapper:
         except Exception:
             temp_c = 18.0
         cold = (temp_c <= 12.0) or (estimate_target_clo(weather) >= 1.0)
+        very_cold = (temp_c <= 0.0) or (estimate_target_clo(weather) >= 1.6)
+        wet = bool(weather.get("is_rain", False)) or float(weather.get("precip_prob", 0.0)) >= 60.0 or float(weather.get("rain", 0.0)) >= 0.5
 
         for (tid, bid), s in zip(base_pairs, base_scores):
             if s <= -1e8:
@@ -449,6 +650,28 @@ class OutfitMapper:
             # Penalise sleeveless tops in cold weather
             if cold and _is_sleeveless(top_it):
                 pen -= 1.0
+
+            # --- Cold fabric penalties ---
+            t_txt = (str(top_it.get("fabric_composition", "")) + " " + str(top_it.get("description", ""))).lower()
+            b_txt = (str(bottom_it.get("fabric_composition", "")) + " " + str(bottom_it.get("description", ""))).lower()
+
+            if cold:
+                # zayıf üst kumaş: viscose/rayon/modal/lyocell/linen/silk
+                if any(k in t_txt for k in ["viscose", "rayon", "modal", "lyocell", "linen", "silk"]):
+                    pen -= (0.6 if very_cold else 0.4)
+
+                # alt: ıslakta denim/ankle/wide paça cezası
+                if wet:
+                    if ("denim" in b_txt or "jean" in b_txt):
+                        pen -= (0.8 if very_cold else 0.5)
+                    if "ankle length" in b_txt:
+                        pen -= 0.3
+                    if "wide leg" in b_txt:
+                        pen -= 0.2
+
+                # bonuslar: astarlı/termal/wool/fleece
+                if any(k in b_txt for k in ["wool", "fleece", "thermal", "lined"]):
+                    pen += 0.4
 
             # Hot-weather penalties/bonuses
             rh = 0.0
@@ -488,7 +711,51 @@ class OutfitMapper:
                         pen -= 0.2
                     if any(k in str(top_it.get("fabric_composition","")) .lower() for k in ["poly", "nylon"]):
                         pen += 0.1
+ 
+            # --- Coverage penalties/bonuses for cold weather ---
+            t_cov = _coverage_top(top_it)
+            b_cov = _coverage_bottom(bottom_it)
 
+            if cold:
+                very_cold = (temp_c <= 0.0) or (estimate_target_clo(weather) >= 1.6)
+                # Üst coverage düşükse ceza
+                if t_cov < (0.9 if very_cold else 0.8):
+                    pen -= (0.6 if very_cold else 0.4)
+                # Alt coverage düşükse ceza
+                if b_cov < (0.9 if very_cold else 0.8):
+                    pen -= (1.2 if very_cold else 0.8)
+
+                # Knit/warm üst bonus
+                if _is_knit_warm_top(top_it):
+                    pen += (0.5 if very_cold else 0.3)
+
+                # Wet denim ankle wide strengthened penalties
+                if wet:
+                    btxt = _txt_blob(bottom_it)
+                    if ("denim" in btxt or "jean" in btxt):
+                        pen -= (0.9 if very_cold else 0.6)
+                    if "ankle length" in btxt:
+                        pen -= 0.3
+                    if "wide leg" in btxt:
+                        pen -= 0.2
+
+            # Stronger skirt penalty in cold; reduced if warm-lined
+            if cold:
+                btxt = _txt_blob(bottom_it)
+                is_skirt = "skirt" in btxt
+                warm_bottom = any(k in btxt for k in ["wool", "fleece", "thermal", "lined", "skort"])
+                if is_skirt:
+                    if very_cold:
+                        pen -= (0.6 if warm_bottom else 1.2)
+                    else:
+                        pen -= (0.3 if warm_bottom else 0.8)
+
+            # --- Outer warm-lining bonus (fur/sherpa/teddy/pile) ---
+            if cold:
+                ttxt = _txt_blob(top_it)
+                if any(k in ttxt for k in ["pile", "teddy", "sherpa", "shearling", "faux fur"]):
+                    pen += 0.2
+ 
             scored_base.append((float(s) + pen, top_it, bottom_it))
 
         if not scored_base:
@@ -523,6 +790,9 @@ class OutfitMapper:
                     adjusted_scores.append(sc)
                     continue
                 bonus = (bonus_alpha * _clo(o)) if is_cold else 0.0
+                otxt = _txt_blob(o)
+                if is_cold and any(k in otxt for k in ["pile", "teddy", "sherpa", "shearling", "faux fur"]):
+                    bonus += 0.3
                 adjusted_scores.append(float(sc) + float(bonus))
 
             best_idx = int(np.argmax(adjusted_scores))

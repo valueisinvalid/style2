@@ -22,26 +22,26 @@ from typing import Dict, Any, List, Tuple, Optional
 # Clo per 1000 gsm; RET in m²·Pa/W (ISO 11092). Lower RET = more breathable.
 # -------------------------------
 FABRIC_PROPERTIES: Dict[str, Dict[str, float]] = {
-    # Naturals
-    "cotton":    {"clo_per_kg_m2": 0.55, "ret": 7.0},
-    "linen":     {"clo_per_kg_m2": 0.45, "ret": 5.0},
-    "wool":      {"clo_per_kg_m2": 0.85, "ret": 10.0},
-    "silk":      {"clo_per_kg_m2": 0.50, "ret": 6.5},
-    "cashmere":  {"clo_per_kg_m2": 0.95, "ret": 9.0},
+    # --- Naturals ---
+    "cotton":    {"clo_per_kg_m2": 0.40, "ret": 7.0},   # zayıf yalıtım
+    "linen":     {"clo_per_kg_m2": 0.25, "ret": 5.0},   # çok serin, yazlık
+    "wool":      {"clo_per_kg_m2": 1.00, "ret": 10.0},  # yüksek yalıtım
+    "silk":      {"clo_per_kg_m2": 0.28, "ret": 6.5},   # ince, serin
+    "cashmere":  {"clo_per_kg_m2": 1.05, "ret": 9.0},   # premium yün
 
-    # Regenerated cellulosics
-    "viscose":   {"clo_per_kg_m2": 0.52, "ret": 7.5},
-    "rayon":     {"clo_per_kg_m2": 0.52, "ret": 7.5},
-    "lyocell":   {"clo_per_kg_m2": 0.50, "ret": 6.5},
-    "modal":     {"clo_per_kg_m2": 0.51, "ret": 7.0},
+    # --- Regenerated cellulosics ---
+    "viscose":   {"clo_per_kg_m2": 0.35, "ret": 7.5},   # pamuktan da düşük
+    "rayon":     {"clo_per_kg_m2": 0.35, "ret": 7.5},
+    "lyocell":   {"clo_per_kg_m2": 0.32, "ret": 6.5},
+    "modal":     {"clo_per_kg_m2": 0.32, "ret": 7.0},
 
-    # Synthetics
-    "polyester": {"clo_per_kg_m2": 0.48, "ret": 16.0},
-    "polyamide": {"clo_per_kg_m2": 0.46, "ret": 18.0},  # aka nylon
-    "nylon":     {"clo_per_kg_m2": 0.46, "ret": 18.0},
-    "acrylic":   {"clo_per_kg_m2": 0.60, "ret": 15.0},
-    "elastane":  {"clo_per_kg_m2": 0.30, "ret": 28.0},
-    "spandex":   {"clo_per_kg_m2": 0.30, "ret": 28.0},
+    # --- Synthetics ---
+    "polyester": {"clo_per_kg_m2": 0.80, "ret": 16.0},  # puffer/fleece izolasyon
+    "polyamide": {"clo_per_kg_m2": 0.70, "ret": 18.0},  # aka nylon
+    "nylon":     {"clo_per_kg_m2": 0.70, "ret": 18.0},
+    "acrylic":   {"clo_per_kg_m2": 0.75, "ret": 15.0},  # yüne yakın
+    "elastane":  {"clo_per_kg_m2": 0.08, "ret": 28.0},  # neredeyse katkısız
+    "spandex":   {"clo_per_kg_m2": 0.08, "ret": 28.0},
 }
 
 FABRIC_PROPERTIES.update({
