@@ -14,6 +14,7 @@ Catalogue sources (first found wins):
 
 from __future__ import annotations
 import argparse, json, pickle
+import re
 from dataclasses import dataclass
 from itertools import product
 from pathlib import Path
@@ -132,6 +133,167 @@ def _coverage_bottom(it: Dict[str, Any]) -> float:
 def _is_knit_warm_top(it: Dict[str, Any]) -> bool:
     t = _txt_blob(it)
     return any(k in t for k in _KNIT_KEYS) or any(k in t for k in _WARM_MAT)
+
+# -------------------------------------------------
+# Fabric breathability estimation (RET) helpers
+# -------------------------------------------------
+
+_FABRIC_RET = {
+    # lower is better (more breathable)
+    "linen": 5.0, "cotton": 7.0, "silk": 8.0,
+    "viscose": 9.0, "rayon": 9.0, "lyocell": 8.5, "modal": 9.0,
+    "polyamide": 16.0, "nylon": 16.0, "polyester": 16.0, "acrylic": 15.0,
+    "spandex": 28.0, "elastane": 28.0, "wool": 20.0, "cashmere": 20.0,
+}
+
+
+def _parse_fabric_perc(s: str):
+    """Parse fabric composition percentages from free text."""
+    s = (s or "").lower()
+    out = []  # list of (name, pct)
+    for name, pct in re.findall(r"([a-z\s]+?)\s*(\d{1,3})\s*%", s):
+        n = name.strip().split()[-1]  # take last token ("recycled polyester" -> "polyester")
+        try:
+            out.append((n, float(pct)))
+        except Exception:
+            pass
+    return out
+
+
+def estimate_ret(it: Dict[str, Any], default: float = 12.0) -> float:
+    """Estimate RET (breathability resistance); lower is more breathable."""
+    mix = _parse_fabric_perc(it.get("fabric_composition", ""))
+    if not mix:
+        txt = _txt_blob(it)
+        for k in _FABRIC_RET:
+            if k in txt:
+                return _FABRIC_RET[k]
+        return default
+    total = 0.0
+    for name, pct in mix:
+        base = None
+        for k in _FABRIC_RET:
+            if k in name:
+                base = _FABRIC_RET[k]
+                break
+        if base is None:
+            base = default
+        total += base * (pct / 100.0)
+    return total or default
+
+
+def has_lining(it: Dict[str, Any]) -> bool:
+    """Detect if item is lined based on text hints."""
+    t = _txt_blob(it)
+    return any(k in t for k in ["lining:", "lined", "jersey lining", "fully lined"])
+
+# -------------------------------------------------
+# Hot-weather fabric & coverage bias helpers
+# -------------------------------------------------
+
+HOT_TEMP_C = 28.0
+
+# Bonus/penalty keyword dictionaries (regex: bonus value)
+FABRIC_HOT_BONUS_KEYWORDS = {
+    r"\blinen\b": 0.45,
+    r"\bhemp\b": 0.35,
+    r"\bramie\b": 0.30,
+    r"\b(cotton|% *cotton)\b": 0.25,
+    r"\blyocell\b|\btencel\b": 0.30,
+    r"\bmodal\b": 0.25,
+    r"\bbamboo\b": 0.25,
+    r"\bsilk\b": 0.20,
+    r"\brayon\b|\bviscose\b": 0.15,
+    r"\bpolyamide\b|\bnylon\b": 0.10,
+    # weave/knit structure
+    r"\bpoplin\b": 0.20,
+    r"\bvoile\b": 0.25,
+    r"\blawn\b": 0.25,
+    r"\bgauze\b|\bmuslin\b": 0.25,
+    r"\bseersucker\b": 0.30,
+    r"\bchambray\b": 0.25,
+    r"\boxford\b": 0.10,
+    r"\bpiqu[ée]\b": 0.10,
+    r"\bmesh\b|\bperforated\b": 0.35,
+    r"\beyelet\b|\bbroderie\b|\blace\b": 0.20,
+    r"\bcrochet\b|\bopen-?knit\b": 0.20,
+    # coverage cues
+    r"\b(sleeveless|tank|vest|cap sleeve)\b": 0.15,
+    r"\bshorts?\b|\bmini\b|\bskort\b": 0.20,
+}
+
+HOT_TECH_BONUS_KEYWORDS = {
+    r"\b(drymove|dri-?fit|coolmax|climalite|aero?ready|dry[- ]?ex|heatgear|airism|moisture[- ]?wicking|quick dry|breathable)\b": 0.35
+}
+
+HOT_PENALTY_KEYWORDS = {
+    r"\bpolyester\b": -0.25,
+    r"\bacrylic\b": -0.25,
+    r"\bwool\b": -0.15,
+    r"\bfleece\b|\bpolar\b": -0.60,
+    r"\bleather\b|\bpu\b|\bcoated\b": -0.50,
+    r"\bquilt(ed)?\b|\bpadded\b|\blined\b": -0.40,
+    r"\bbrushed\b|\bnap(ped)?\b": -0.25,
+}
+
+HOT_MERINO_BONUS = { r"\bmerino\b": 0.10 }
+
+
+def _text_blob_full(item: Dict[str, Any]) -> str:
+    return " ".join([
+        str(item.get("name", "")),
+        str(item.get("type", "")),
+        str(item.get("description", "")),
+        " ".join([f"{k} {v}" for k, v in (item.get("key_value_description") or {}).items()]),
+        str(item.get("fabric_composition", "")),
+    ]).lower()
+
+
+def is_denim(item: Dict[str, Any]) -> bool:
+    txt = _text_blob_full(item)
+    return ("denim" in txt) or ("jean" in txt)
+
+
+def is_short_bottom(item: Dict[str, Any]) -> bool:
+    blob = _text_blob_full(item)
+    return any(k in blob for k in ["short", "mini", "skort"])  # covers shorts & short skirts
+
+# Skirt length helpers
+def _is_midi(blob: str) -> bool:
+    return "midi" in blob
+
+
+def _is_maxi(blob: str) -> bool:
+    return any(k in blob for k in ["maxi", "ankle length", "floor length", "full length"])
+
+
+def fabric_hot_bonus(item: Dict[str, Any], temp_c: float) -> float:
+    """Return hot-weather fabric bonus/penalty value for a single item."""
+    if temp_c < HOT_TEMP_C:
+        return 0.0
+
+    blob = _text_blob_full(item)
+
+    # Denim whitelist bonus
+    denim_bonus = 0.0
+    if is_denim(item) and is_short_bottom(item):
+        denim_bonus = 0.20
+
+    bonus = 0.0
+    for pat, val in {**FABRIC_HOT_BONUS_KEYWORDS, **HOT_TECH_BONUS_KEYWORDS, **HOT_MERINO_BONUS}.items():
+        if re.search(pat, blob):
+            bonus += val
+
+    penalty = 0.0
+    for pat, val in HOT_PENALTY_KEYWORDS.items():
+        if re.search(pat, blob):
+            penalty += val
+
+    # Reduce penalty for tech fabrics
+    if any(re.search(pat, blob) for pat in HOT_TECH_BONUS_KEYWORDS):
+        penalty *= 0.3
+
+    return bonus + penalty + denim_bonus
 
 
 @dataclass(frozen=True)
@@ -557,10 +719,87 @@ class OutfitMapper:
             tops_cap = max(0.40, target + 0.10)
             bottoms_cap = max(0.40, target + 0.10)
             _pre_t, _pre_b = tops_f[:], bottoms_f[:]
+
+            # Prefer breathable (low RET) and unlined pieces
+            def _breathable(pool):
+                # Keep best-breathing half; avoid lined if possible
+                scored = [(estimate_ret(x), has_lining(x), x) for x in pool]
+                if not scored:
+                    return pool
+                scored.sort(key=lambda z: (z[0], z[1]))  # lower RET, then unlined
+                keep = max(1, len(scored) // 2)
+                return [z[2] for z in scored[:keep]]
+
             tops_f = [t for t in tops_f if float(t.get("clo", 0.3)) <= tops_cap]
             bottoms_f = [b for b in bottoms_f if float(b.get("clo", 0.3)) <= bottoms_cap]
-            if not tops_f: tops_f = _pre_t
-            if not bottoms_f: bottoms_f = _pre_b
+
+            # Apply breathability pruning (fallback if empty)
+            t2 = _breathable(tops_f)
+            b2 = _breathable(bottoms_f)
+            if t2:
+                tops_f = t2
+            if b2:
+                bottoms_f = b2
+
+            if not tops_f:
+                tops_f = _pre_t
+            if not bottoms_f:
+                bottoms_f = _pre_b
+
+            # --- Hot strict prefs: short sleeve/tanks; shorts/mini/knee ---
+            def _is_long_sleeve(it):
+                t = _txt_blob(it)
+                return ("long sleeve" in t) or ("3/4" in t)
+
+            def _is_short_sleeve_or_sleeveless(it):
+                t = _txt_blob(it)
+                return any(k in t for k in ["sleeveless", "tank", "camisole", "vest", "short sleeve", "cap sleeve"])
+
+            def _is_shorts_or_skort(it):
+                t = _txt_blob(it)
+                return ("shorts" in t) or ("skort" in t)
+
+            def _is_skirt_mini_or_knee(it):
+                t = _txt_blob(it)
+                return ("skirt" in t) and any(k in t for k in ["mini", "short", "knee"])
+
+            def _is_denim(it):
+                return ("denim" in _txt_blob(it)) or ("jean" in _txt_blob(it))
+
+            def _is_ankle_or_long(it):
+                t = _txt_blob(it)
+                return ("ankle length" in t) or (("long" in t) and ("length" in t))
+
+            # TOPS: Prefer sleeveless/short sleeves
+            pre_t = tops_f[:]
+            pref_t = [t for t in tops_f if _is_short_sleeve_or_sleeveless(t)]
+            if pref_t:
+                tops_f = pref_t
+            else:
+                # keep most breathable half among remaining longs
+                tops_f = sorted(tops_f, key=lambda x: (estimate_ret(x), has_lining(x)))[: max(1, len(tops_f)//2)]
+                if not tops_f:
+                    tops_f = pre_t
+
+            # BOTTOMS: shorts/skort or mini/knee skirt first
+            pre_b = bottoms_f[:]
+            pref_b = [b for b in bottoms_f if _is_shorts_or_skort(b) or _is_skirt_mini_or_knee(b)]
+            if pref_b:
+                # remove denim & lined if possible
+                cand = [b for b in pref_b if not has_lining(b)]
+                cand = [b for b in cand if not (_is_denim(b) and _is_ankle_or_long(b))]
+                bottoms_f = cand if cand else pref_b
+            else:
+                # unavoidable pants: drop ankle/long, denim, lined
+                nb = [b for b in bottoms_f if not _is_ankle_or_long(b)]
+                nb = [b for b in nb if not (_is_denim(b) and not _is_shorts_or_skort(b) and not _is_skirt_mini_or_knee(b))]
+                if nb:
+                    bottoms_f = nb
+                else:
+                    scored = sorted(bottoms_f, key=lambda x: (estimate_ret(x), has_lining(x)))
+                    bottoms_f = scored[: max(1, len(scored)//2)]
+                    if not bottoms_f:
+                        bottoms_f = pre_b
 
         # ---------------------------------------------
         # If target is high (cold/snowy), prefer heavier outers by
@@ -711,7 +950,82 @@ class OutfitMapper:
                         pen -= 0.2
                     if any(k in str(top_it.get("fabric_composition","")) .lower() for k in ["poly", "nylon"]):
                         pen += 0.1
- 
+
+                # Fabric breathability bonus/penalty
+                t_ret = estimate_ret(top_it)
+                b_ret = estimate_ret(bottom_it)
+
+                # Big bonus for airy naturals
+                if any(k in t_blob for k in ["linen", "cotton", "viscose", "rayon", "lyocell", "modal", "seersucker", "crinkle", "eyelet"]):
+                    pen += 0.4
+                if any(k in b_blob for k in ["linen", "cotton", "viscose", "rayon", "lyocell", "modal", "seersucker", "crinkle"]):
+                    pen += 0.3
+
+                # Penalize poly-heavy and lined in heat
+                def _poly_heavy(it):
+                    mix = _parse_fabric_perc(it.get("fabric_composition", ""))
+                    return bool(mix) and sum(p for n, p in mix if ("polyester" in n or "polyamide" in n or "nylon" in n)) >= 60.0
+
+                if _poly_heavy(top_it):
+                    pen -= 0.4
+                if _poly_heavy(bottom_it):
+                    pen -= 0.3
+                if has_lining(top_it):
+                    pen -= 0.3
+                if has_lining(bottom_it):
+                    pen -= 0.3
+
+                # RET-based shaping (lower is better)
+                pen += (-0.02) * (t_ret - 10.0)
+                pen += (-0.015) * (b_ret - 10.0)
+
+                # Extra bump for sleeveless/cami/tank
+                if any(k in t_blob for k in ["camisole", "tank", "vest", "sleeveless", "cap sleeve"]):
+                    pen += 0.1
+
+                # Fabric hot bonus integration
+                pen += fabric_hot_bonus(top_it, temp_c)
+                pen += fabric_hot_bonus(bottom_it, temp_c)
+
+                # --- Hot strengthening ---
+                is_long = ("long sleeve" in t_blob) or ("3/4" in t_blob)
+                is_tiny_top = any(k in t_blob for k in ["sleeveless", "tank", "camisole", "vest", "cap sleeve"])
+
+                is_shorts = ("shorts" in b_blob) or ("skort" in b_blob)
+                is_mini_or_knee_skirt = ("skirt" in b_blob) and any(k in b_blob for k in ["mini", "short"])  # knee not included
+                is_denim = ("denim" in b_blob) or ("jean" in b_blob)
+                is_ankle_or_long = ("ankle length" in b_blob) or (("long" in b_blob) and ("length" in b_blob))
+                is_midi = _is_midi(b_blob)
+                is_maxi = _is_maxi(b_blob)
+
+                if is_tiny_top:
+                    pen += 0.4
+                if is_long:
+                    pen -= 0.7
+
+                if is_shorts:
+                    pen += 0.6
+                elif is_mini_or_knee_skirt:
+                    pen += 0.4
+                elif is_midi:
+                     pen += 0.1
+
+                if is_denim:
+                    if is_shorts or is_mini_or_knee_skirt:
+                        pass  # whitelist denim shorts or mini skirts
+                    else:
+                        pen -= 0.5
+                if is_ankle_or_long:
+                    pen -= 0.4
+                if is_maxi:
+                     pen -= 0.25
+                if has_lining(bottom_it):
+                    pen -= 0.4
+
+                # amplify RET impact
+                pen += (-0.035) * (t_ret - 10.0)
+                pen += (-0.025) * (b_ret - 10.0)
+
             # --- Coverage penalties/bonuses for cold weather ---
             t_cov = _coverage_top(top_it)
             b_cov = _coverage_bottom(bottom_it)
