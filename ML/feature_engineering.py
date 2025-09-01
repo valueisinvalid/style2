@@ -25,6 +25,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+import json
 
 
 def build_matrices(labels_csv: Path, style_pkl: Path, color_pkl: Path):
@@ -34,6 +35,32 @@ def build_matrices(labels_csv: Path, style_pkl: Path, color_pkl: Path):
         style_vectors = pickle.load(f)
     with open(color_pkl, "rb") as f:
         color_vectors = pickle.load(f)
+
+    # ---- Load item metadata for role inference ----
+    # Expect a JSON list of dicts with at least item_id, type, name, and optionally role.
+    # Falls back to simple keyword inference if role not provided.
+    items_meta = {}
+    try:
+        with open(Path(style_pkl).parent / "your_data.json", "r", encoding="utf-8") as f_meta:
+            data_meta = json.load(f_meta)
+            for it in data_meta:
+                iid = str(it.get("item_id", "").strip())
+                if not iid:
+                    continue
+                items_meta[iid] = it
+    except Exception:
+        # Metadata not essential; proceed with empty dict (role inference will rely solely on keyword matching)
+        items_meta = {}
+
+    def _infer_role_from_type(t: str) -> str | None:  # noqa: E701, F821  (python >=3.9 for |)
+        t = (t or "").lower()
+        if any(k in t for k in ["shirt", "t-shirt", "top", "blouse", "jumper", "sweater", "hoodie", "cardigan", "vest", "camisole", "tank"]):
+            return "base"  # treat as base/top
+        if any(k in t for k in ["jean", "pant", "trouser", "skirt", "short", "culotte", "legging"]):
+            return "bottom"
+        if any(k in t for k in ["coat", "jacket", "blazer", "parka", "anorak", "overcoat", "gilet", "puffer", "trench"]):
+            return "outer"
+        return None
 
     X_list, y_list = [], []
 
@@ -57,13 +84,35 @@ def build_matrices(labels_csv: Path, style_pkl: Path, color_pkl: Path):
         if s1.shape != (384,) or s2.shape != (384,) or c1.shape != (3,) or c2.shape != (3,):
             continue
 
-        # İlişkisel özellikler
+        # ---------------- Relational / interactional features ----------------
         style_diff = s1 - s2
         style_prod = s1 * s2  # element-wise
-        color_dist = np.linalg.norm(c1 - c2)  # skaler
+        color_dist = np.linalg.norm(c1 - c2)  # scalar
 
-        final_feature_vector = np.concatenate([style_diff, style_prod, [color_dist]])
-        if final_feature_vector.shape != (769,):
+        # ---- Role-based pair type flags ----
+        role1 = None; role2 = None
+        if id1 in items_meta:
+            role1 = (items_meta[id1].get("role") or _infer_role_from_type(
+                f"{items_meta[id1].get('type','')} {items_meta[id1].get('name','')}"))
+        if id2 in items_meta:
+            role2 = (items_meta[id2].get("role") or _infer_role_from_type(
+                f"{items_meta[id2].get('type','')} {items_meta[id2].get('name','')}"))
+
+        # If still missing, infer directly from style/type keywords (best effort)
+        role1 = role1 or _infer_role_from_type("") or "unknown"
+        role2 = role2 or _infer_role_from_type("") or "unknown"
+
+        pair_type = f"{role1}_{role2}".lower()
+        is_base_mid = 1.0 if pair_type == "base_mid" else 0.0
+        is_base_bottom = 1.0 if pair_type == "base_bottom" else 0.0
+
+        final_feature_vector = np.concatenate([
+            style_diff,
+            style_prod,
+            [color_dist, is_base_mid, is_base_bottom],
+        ])
+
+        if final_feature_vector.shape != (771,):
             continue
 
         X_list.append(final_feature_vector)

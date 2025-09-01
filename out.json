@@ -17,7 +17,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/ab/1e/ab1ec32292995dfadba1a9e8058d5624fe2e579d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ab/1e/ab1ec32292995dfadba1a9e8058d5624fe2e579d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "0963662139",
@@ -36,7 +39,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/e4/af/e4af2eae840fddf244b30cb264ef4bf04e5c45b6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e4/af/e4af2eae840fddf244b30cb264ef4bf04e5c45b6.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1142908001",
@@ -56,7 +62,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/2b/72/2b722de1d8e9b38af30da131d8fb91ed5b5fe8fa.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2b/72/2b722de1d8e9b38af30da131d8fb91ed5b5fe8fa.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296594002",
@@ -75,7 +84,8 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/76/60/7660c08f60779b03d941cb4fa2459559c15f9ff7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/76/60/7660c08f60779b03d941cb4fa2459559c15f9ff7.jpg",
+    "roles": []
   },
   {
     "item_id": "1308428001",
@@ -94,7 +104,10 @@
       "Description:": "Peach pink, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/34/2b/342baa60b5956f7ebaac03cf60849a43f29c9d9d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/34/2b/342baa60b5956f7ebaac03cf60849a43f29c9d9d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1301327001",
@@ -113,7 +126,8 @@
       "Neckline:": "Cowl neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/62/96/6296a3befd0a974f18a9bb6e2bfda1eb7c23f099.jpg"
+    "productImage": "https://image.hm.com/assets/hm/62/96/6296a3befd0a974f18a9bb6e2bfda1eb7c23f099.jpg",
+    "roles": []
   },
   {
     "item_id": "1274171089",
@@ -130,7 +144,10 @@
       "Neckline:": "Crew-neck",
       "Description:": "White/Bright blue/Black, Le Marais, Paris, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/5e/1d/5e1d8a32e55ec850ba0178cb6db341a8a7833350.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5e/1d/5e1d8a32e55ec850ba0178cb6db341a8a7833350.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1191700036",
@@ -149,7 +166,11 @@
       "Description:": "Burgundy, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/5d/e9/5de970cf3c3ece1863c6a19e8ba4df35b813ecc6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5d/e9/5de970cf3c3ece1863c6a19e8ba4df35b813ecc6.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1303338003",
@@ -167,7 +188,8 @@
       "Neckline:": "Round neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/69/35/693513523c4e3c15df432ebac4d582e671802915.jpg"
+    "productImage": "https://image.hm.com/assets/hm/69/35/693513523c4e3c15df432ebac4d582e671802915.jpg",
+    "roles": []
   },
   {
     "item_id": "1263464012",
@@ -186,7 +208,10 @@
       "Neckline:": "Boat neck",
       "Description:": "Dark green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/cb/0d/cb0dc2532800f89b76bdd00347315d51a875f426.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cb/0d/cb0dc2532800f89b76bdd00347315d51a875f426.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1288094001",
@@ -204,7 +229,10 @@
       "Neckline:": "Round neck",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/84/01/84015ae75955fb8ae2a644f228f9919537a4b0b6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/84/01/84015ae75955fb8ae2a644f228f9919537a4b0b6.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1303338002",
@@ -223,7 +251,8 @@
       "Neckline:": "Round neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/1e/bd/1ebda86cfbbcd261ce3c33103e06ee0056e1d39e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1e/bd/1ebda86cfbbcd261ce3c33103e06ee0056e1d39e.jpg",
+    "roles": []
   },
   {
     "item_id": "0963662156",
@@ -242,7 +271,10 @@
       "Description:": "Dark grey, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/3c/af/3caf298cf0988ddcf08727f20a423271df304895.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3c/af/3caf298cf0988ddcf08727f20a423271df304895.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1274285003",
@@ -262,7 +294,10 @@
       "Description:": "Light green, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/79/56/7956ea8e58c3513f4c80f73eaa4c12307357ddbc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/79/56/7956ea8e58c3513f4c80f73eaa4c12307357ddbc.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1274285010",
@@ -281,7 +316,10 @@
       "Description:": "White/Dark blue, Spotted",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/9c/48/9c4878d1d7f011407f4290ae774c7ac993bab7ba.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9c/48/9c4878d1d7f011407f4290ae774c7ac993bab7ba.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1292500007",
@@ -299,7 +337,10 @@
       "Description:": "Powder pink, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/f1/33/f13355b7ec64e80aafabbd824aad041dcf8ddcfd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f1/33/f13355b7ec64e80aafabbd824aad041dcf8ddcfd.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1292500002",
@@ -316,7 +357,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/23/05/23058f9e36d09ae55d61302647a0f2f235ebe13d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/23/05/23058f9e36d09ae55d61302647a0f2f235ebe13d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1292500001",
@@ -333,7 +377,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/6a/bd/6abd39ddb39883837c463d6a1b94a2efb1da7d85.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6a/bd/6abd39ddb39883837c463d6a1b94a2efb1da7d85.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1274171055",
@@ -350,7 +397,10 @@
       "Neckline:": "Crew-neck",
       "Description:": "Dark brown/White, Atelier"
     },
-    "productImage": "https://image.hm.com/assets/hm/45/d1/45d186a20482324280711120589260afa8be7c68.jpg"
+    "productImage": "https://image.hm.com/assets/hm/45/d1/45d186a20482324280711120589260afa8be7c68.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296379008",
@@ -367,7 +417,10 @@
       "Description:": "Light grey marl/Navy blue, Milano, Lombardia, school of arts, year of 2008",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/6e/82/6e8235674c1ff77be3e7465cfd9ff35a60bf552e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6e/82/6e8235674c1ff77be3e7465cfd9ff35a60bf552e.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1290014002",
@@ -388,7 +441,10 @@
       "Description:": "Warm brown, Solid colour",
       "Concept:": "H&M Move"
     },
-    "productImage": "https://image.hm.com/assets/hm/f8/35/f83551aea10487b302f9c632da3ec39c7bc49bdd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f8/35/f83551aea10487b302f9c632da3ec39c7bc49bdd.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296534001",
@@ -406,7 +462,8 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/5c/c0/5cc017617261a3b341705e46b650042c3fc50b22.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5c/c0/5cc017617261a3b341705e46b650042c3fc50b22.jpg",
+    "roles": []
   },
   {
     "item_id": "1293324001",
@@ -426,7 +483,10 @@
       "Neckline:": "Deep neckline V-neck",
       "Description:": "Brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e5/c0/e5c069d3ea9f601090df138a0c17dc0d17d7c6cb.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e5/c0/e5c069d3ea9f601090df138a0c17dc0d17d7c6cb.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1295275001",
@@ -444,7 +504,8 @@
       "Neckline:": "Round neck",
       "Description:": "Dark grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/fe/ad/feadc26d47d5a252c073c0da488a80abc212d9a0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fe/ad/feadc26d47d5a252c073c0da488a80abc212d9a0.jpg",
+    "roles": []
   },
   {
     "item_id": "1301377004",
@@ -462,7 +523,8 @@
       "Neckline:": "Round neck",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/5b/eb/5bebe1d7b75de906156e9be15960eb0b0ee5e2fc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5b/eb/5bebe1d7b75de906156e9be15960eb0b0ee5e2fc.jpg",
+    "roles": []
   },
   {
     "item_id": "1300538002",
@@ -481,7 +543,10 @@
       "Sleeve Style:": "Cap sleeve",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/09/69/09696d46b3348734bc17e2ae2300d3609fca9ff7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/09/69/09696d46b3348734bc17e2ae2300d3609fca9ff7.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1310907001",
@@ -501,7 +566,8 @@
       "Sleeve Style:": "Butterfly sleeve",
       "Description:": "Orange/Light pink/Light yellow/Purple/Light blue-grey, Paisley-patterned"
     },
-    "productImage": "https://image.hm.com/assets/hm/63/79/6379b95dd62c6a26c28634739c7c0d0df7181b88.jpg"
+    "productImage": "https://image.hm.com/assets/hm/63/79/6379b95dd62c6a26c28634739c7c0d0df7181b88.jpg",
+    "roles": []
   },
   {
     "item_id": "1299542003",
@@ -520,7 +586,10 @@
       "Description:": "Golden olive, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/0f/04/0f042977bba138db920dee2163e1b45fe4233d63.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0f/04/0f042977bba138db920dee2163e1b45fe4233d63.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1293965004",
@@ -537,7 +606,8 @@
       "Neckline:": "Polo-neck",
       "Description:": "Dark beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/37/6a/376a4456ec7c9f618451793ac534ca1af74b1bb0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/37/6a/376a4456ec7c9f618451793ac534ca1af74b1bb0.jpg",
+    "roles": []
   },
   {
     "item_id": "1299843003",
@@ -556,7 +626,8 @@
       "Neckline:": "Round neck",
       "Description:": "Dark grey, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/b6/7a/b67a540f24172cd7e81454ba16eb88d5f0db1f1e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b6/7a/b67a540f24172cd7e81454ba16eb88d5f0db1f1e.jpg",
+    "roles": []
   },
   {
     "item_id": "1287140003",
@@ -576,7 +647,10 @@
       "Description:": "White/Red, Striped",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/c2/9b/c29b73c1ec3e72629d1d1ddb1862334b26f040f5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c2/9b/c29b73c1ec3e72629d1d1ddb1862334b26f040f5.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1303364001",
@@ -594,7 +668,8 @@
       "Neckline:": "Boat neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/40/2a/402a3e46dcd51b50680c94ea8894aac9378fb270.jpg"
+    "productImage": "https://image.hm.com/assets/hm/40/2a/402a3e46dcd51b50680c94ea8894aac9378fb270.jpg",
+    "roles": []
   },
   {
     "item_id": "1305355001",
@@ -613,7 +688,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "H&M EDITION"
     },
-    "productImage": "https://image.hm.com/assets/hm/62/0f/620fb7ee830e86ecc73995c32eab9d463c310a74.jpg"
+    "productImage": "https://image.hm.com/assets/hm/62/0f/620fb7ee830e86ecc73995c32eab9d463c310a74.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1285169007",
@@ -633,7 +711,10 @@
       "Collection:": "S/S 2025",
       "Nice to know:": "H&M Premium Selection"
     },
-    "productImage": "https://image.hm.com/assets/hm/44/25/442593eb1217fd2f591710e9170ae34cc19d3004.jpg"
+    "productImage": "https://image.hm.com/assets/hm/44/25/442593eb1217fd2f591710e9170ae34cc19d3004.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1294765002",
@@ -655,7 +736,8 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Supersoft"
     },
-    "productImage": "https://image.hm.com/assets/hm/c7/87/c787210ddf89209b80379b9794291cb70b5d5034.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c7/87/c787210ddf89209b80379b9794291cb70b5d5034.jpg",
+    "roles": []
   },
   {
     "item_id": "1293967005",
@@ -673,7 +755,10 @@
       "Neckline:": "Round neck",
       "Description:": "White/Dark blue/Blue/Green/Yellow, Postcards from Brasil"
     },
-    "productImage": "https://image.hm.com/assets/hm/4d/d9/4dd965672b33554d78618ded15d030d42011592d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4d/d9/4dd965672b33554d78618ded15d030d42011592d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1290225004",
@@ -691,7 +776,10 @@
       "Description:": "Dark beige/Black, Leopard-print",
       "Collection:": "SUMMER 2025"
     },
-    "productImage": "https://image.hm.com/assets/hm/91/58/9158000ad5cf1a2b0021e4103dbdb51b8855c7e9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/91/58/9158000ad5cf1a2b0021e4103dbdb51b8855c7e9.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1300096001",
@@ -711,7 +799,8 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/e5/ea/e5eae3c9bd25d8b43815a8d9428a190817b388c0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e5/ea/e5eae3c9bd25d8b43815a8d9428a190817b388c0.jpg",
+    "roles": []
   },
   {
     "item_id": "1293190004",
@@ -728,7 +817,10 @@
       "Neckline:": "Round neck",
       "Description:": "Navy blue/White, Milano amore, via della moda"
     },
-    "productImage": "https://image.hm.com/assets/hm/06/c3/06c30abe5f43f578b439afdca64d114d5cff03fc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/06/c3/06c30abe5f43f578b439afdca64d114d5cff03fc.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1285595001",
@@ -747,7 +839,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/42/88/42888e48091d11dd2736229f4dcccb4fe1493e84.jpg"
+    "productImage": "https://image.hm.com/assets/hm/42/88/42888e48091d11dd2736229f4dcccb4fe1493e84.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1274436001",
@@ -765,7 +860,8 @@
       "Sleeve Style:": "Balloon sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/cb/d1/cbd15f758aae012de3ec802711eb6a386c51a71a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cb/d1/cbd15f758aae012de3ec802711eb6a386c51a71a.jpg",
+    "roles": []
   },
   {
     "item_id": "1267641004",
@@ -783,7 +879,8 @@
       "Neckline:": "Halterneck",
       "Description:": "Black, Solid colour, Black"
     },
-    "productImage": "https://image.hm.com/assets/003/fc/c6/fcc6a175cecdeebd9407c5dfd65c8b7e61e1ec88.jpg"
+    "productImage": "https://image.hm.com/assets/003/fc/c6/fcc6a175cecdeebd9407c5dfd65c8b7e61e1ec88.jpg",
+    "roles": []
   },
   {
     "item_id": "1296059003",
@@ -802,7 +899,10 @@
       "Description:": "Bright red/White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/fa/8c/fa8c4a9f137aa45f62c23caf9be46d5932559b12.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fa/8c/fa8c4a9f137aa45f62c23caf9be46d5932559b12.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1299061004",
@@ -818,7 +918,8 @@
       "Fit:": "Slim fit",
       "Description:": "Pink Red, Striped, Pink & Burgundy Stripes"
     },
-    "productImage": "https://image.hm.com/assets/003/b9/ac/b9ac99a2e2a3c00296117f4c02f27810ec578839.jpg"
+    "productImage": "https://image.hm.com/assets/003/b9/ac/b9ac99a2e2a3c00296117f4c02f27810ec578839.jpg",
+    "roles": []
   },
   {
     "item_id": "1299061003",
@@ -834,7 +935,8 @@
       "Fit:": "Slim fit",
       "Description:": "Black White, Striped, Black & White Stripes"
     },
-    "productImage": "https://image.hm.com/assets/003/0e/40/0e4022566179ce6d8528d286fef965ad33638e7b.jpg"
+    "productImage": "https://image.hm.com/assets/003/0e/40/0e4022566179ce6d8528d286fef965ad33638e7b.jpg",
+    "roles": []
   },
   {
     "item_id": "1308725001",
@@ -854,7 +956,8 @@
       "Neckline:": "Round neck",
       "Description:": "Grey, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6e/44/6e444ca4e8a72721010fcf15be2ffb5b6cc5c5f3.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6e/44/6e444ca4e8a72721010fcf15be2ffb5b6cc5c5f3.jpg",
+    "roles": []
   },
   {
     "item_id": "1217576025",
@@ -873,7 +976,11 @@
       "Style:": "Shirt dress",
       "Description:": "Black/Light green/White/Light blue/Light yellow/Light orange, Floral"
     },
-    "productImage": "https://image.hm.com/assets/hm/42/52/42520b3919eaa6e77d5a2e330872f572ad7f8904.jpg"
+    "productImage": "https://image.hm.com/assets/hm/42/52/42520b3919eaa6e77d5a2e330872f572ad7f8904.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1217576030",
@@ -892,7 +999,11 @@
       "Style:": "Shirt dress",
       "Description:": "Dark beige/Black, Leopard-print"
     },
-    "productImage": "https://image.hm.com/assets/hm/18/c6/18c6aecb2a30f49209be22bc03a3b4958abe8438.jpg"
+    "productImage": "https://image.hm.com/assets/hm/18/c6/18c6aecb2a30f49209be22bc03a3b4958abe8438.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1217576026",
@@ -911,7 +1022,11 @@
       "Style:": "Shirt dress",
       "Description:": "Cream/Dark grey, Zebra-print"
     },
-    "productImage": "https://image.hm.com/assets/hm/a3/3b/a33bf69f13f4ab69e8fe4884d697b173148da308.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a3/3b/a33bf69f13f4ab69e8fe4884d697b173148da308.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1296027001",
@@ -931,7 +1046,8 @@
       "Neckline:": "Round neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/1f/2b/1f2b8c63743368ab96fc7ae7bdacaf3a15496d7f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1f/2b/1f2b8c63743368ab96fc7ae7bdacaf3a15496d7f.jpg",
+    "roles": []
   },
   {
     "item_id": "1309903002",
@@ -952,7 +1068,11 @@
       "Neckline:": "V-neck",
       "Description:": "Aubergine purple, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0a/97/0a97ad393b84eec93052c18efa01338d323d7c9e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0a/97/0a97ad393b84eec93052c18efa01338d323d7c9e.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1296027004",
@@ -972,7 +1092,8 @@
       "Neckline:": "Round neck",
       "Description:": "Dark green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/c1/6b/c16bd383b67772316af77fd00dc04071a6840557.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c1/6b/c16bd383b67772316af77fd00dc04071a6840557.jpg",
+    "roles": []
   },
   {
     "item_id": "1295542001",
@@ -992,7 +1113,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/ef/26/ef2603697480d7081699914282f5f72f6ec9dd8d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ef/26/ef2603697480d7081699914282f5f72f6ec9dd8d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1308590001",
@@ -1011,7 +1135,8 @@
       "Description:": "Light beige/Pink/Green/Yellow, Floral",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/86/5a/865a85532abb209fd7dccdaf57f55cf97c396d0e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/86/5a/865a85532abb209fd7dccdaf57f55cf97c396d0e.jpg",
+    "roles": []
   },
   {
     "item_id": "1295722002",
@@ -1031,7 +1156,8 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/87/ab/87ab34b4a277d196baa78aea774ac40054c4f731.jpg"
+    "productImage": "https://image.hm.com/assets/hm/87/ab/87ab34b4a277d196baa78aea774ac40054c4f731.jpg",
+    "roles": []
   },
   {
     "item_id": "1290380003",
@@ -1050,7 +1176,8 @@
       "Neckline:": "Boat neck",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/aa/caaae0ba0ff4ecefbf08b61f39dc8fb089a8e4c6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/aa/caaae0ba0ff4ecefbf08b61f39dc8fb089a8e4c6.jpg",
+    "roles": []
   },
   {
     "item_id": "1293989001",
@@ -1069,7 +1196,11 @@
       "Style:": "Shirt dress",
       "Description:": "Khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/4a/59/4a595e8fcf47a45b3efd51e25ef9c88f1daa6c63.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4a/59/4a595e8fcf47a45b3efd51e25ef9c88f1daa6c63.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1309909001",
@@ -1089,7 +1220,8 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6b/d8/6bd89d2e21ba8838f643eab1b2778b7bb91f20d9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6b/d8/6bd89d2e21ba8838f643eab1b2778b7bb91f20d9.jpg",
+    "roles": []
   },
   {
     "item_id": "1272451008",
@@ -1111,7 +1243,8 @@
       "Description:": "White/Dark grey, Floral",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/fb/cafb43e8c79d4f6ff654be8f319835db8135205c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/fb/cafb43e8c79d4f6ff654be8f319835db8135205c.jpg",
+    "roles": []
   },
   {
     "item_id": "1297151001",
@@ -1130,7 +1263,8 @@
       "Neckline:": "Square neckline",
       "Description:": "Grey, Pinstriped"
     },
-    "productImage": "https://image.hm.com/assets/hm/7f/ad/7fad1f20b692a9c6ddad86caf1e9e2f02a34c4ee.jpg"
+    "productImage": "https://image.hm.com/assets/hm/7f/ad/7fad1f20b692a9c6ddad86caf1e9e2f02a34c4ee.jpg",
+    "roles": []
   },
   {
     "item_id": "1297845003",
@@ -1149,7 +1283,8 @@
       "Neckline:": "V-neck",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/4c/67/4c67fd8152e6b819d51ace012378cdc40b9e0be2.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4c/67/4c67fd8152e6b819d51ace012378cdc40b9e0be2.jpg",
+    "roles": []
   },
   {
     "item_id": "1283258001",
@@ -1167,7 +1302,8 @@
       "Neckline:": "Boat neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/1b/13/1b1349287847e8ef1c050b3f62db34e706d81a79.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1b/13/1b1349287847e8ef1c050b3f62db34e706d81a79.jpg",
+    "roles": []
   },
   {
     "item_id": "1301867001",
@@ -1185,7 +1321,10 @@
       "Neckline:": "V-neck",
       "Description:": "Yellow, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/cd/0e/cd0e9498e169b86f9a6903ccbd9bbbf7288e2588.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cd/0e/cd0e9498e169b86f9a6903ccbd9bbbf7288e2588.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1297125001",
@@ -1205,7 +1344,8 @@
       "Neckline:": "Round neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/03/f8/03f8b1e48f867313bba63b1ebf5e2da210e9c747.jpg"
+    "productImage": "https://image.hm.com/assets/hm/03/f8/03f8b1e48f867313bba63b1ebf5e2da210e9c747.jpg",
+    "roles": []
   },
   {
     "item_id": "1292353004",
@@ -1224,7 +1364,8 @@
       "Neckline:": "Round neck",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0b/67/0b671209b4b3c57ad0b4223ce1fc6f6474ace507.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0b/67/0b671209b4b3c57ad0b4223ce1fc6f6474ace507.jpg",
+    "roles": []
   },
   {
     "item_id": "1295133002",
@@ -1244,7 +1385,8 @@
       "Sleeve Style:": "Balloon sleeve",
       "Description:": "Blue/White, Floral"
     },
-    "productImage": "https://image.hm.com/assets/hm/eb/19/eb19881b1cca25f16d345c763ef327231f5bc24d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/eb/19/eb19881b1cca25f16d345c763ef327231f5bc24d.jpg",
+    "roles": []
   },
   {
     "item_id": "1315335001",
@@ -1262,7 +1404,10 @@
       "Neckline:": "Ballerina neckline",
       "Description:": "Dark denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/b7/c4/b7c4363c57b7bbb90c2d93bd43ac9a55ed7a06ed.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b7/c4/b7c4363c57b7bbb90c2d93bd43ac9a55ed7a06ed.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1278037004",
@@ -1284,7 +1429,8 @@
       "Sleeve Style:": "Flutter sleeve",
       "Description:": "Bright blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/96/3b/963b10ab3f145e0bbbc56392bbbc50439d2cf7a0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/96/3b/963b10ab3f145e0bbbc56392bbbc50439d2cf7a0.jpg",
+    "roles": []
   },
   {
     "item_id": "1303140001",
@@ -1304,7 +1450,8 @@
       "Neckline:": "Boat neck",
       "Description:": "Cream/Light pink/Dusty green/Brown, Floral"
     },
-    "productImage": "https://image.hm.com/assets/hm/a6/b2/a6b25bfbf15ac171fd4058736d7b0fb5871b9dd4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a6/b2/a6b25bfbf15ac171fd4058736d7b0fb5871b9dd4.jpg",
+    "roles": []
   },
   {
     "item_id": "1295544003",
@@ -1324,7 +1471,8 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/70/d7/70d7a5311aa606d73f5b0d2eed31092ae72c2980.jpg"
+    "productImage": "https://image.hm.com/assets/hm/70/d7/70d7a5311aa606d73f5b0d2eed31092ae72c2980.jpg",
+    "roles": []
   },
   {
     "item_id": "1297142003",
@@ -1345,7 +1493,8 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "Dark green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/60/b2/60b2b3457ebb2cbb045ee62a9f2e1c644380e113.jpg"
+    "productImage": "https://image.hm.com/assets/hm/60/b2/60b2b3457ebb2cbb045ee62a9f2e1c644380e113.jpg",
+    "roles": []
   },
   {
     "item_id": "1308599001",
@@ -1365,7 +1514,8 @@
       "Description:": "Light blue/White, Checked",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/35/53/35532458d8ea706da7affcdb3044ce5c03a86a1d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/35/53/35532458d8ea706da7affcdb3044ce5c03a86a1d.jpg",
+    "roles": []
   },
   {
     "item_id": "1296063002",
@@ -1384,7 +1534,10 @@
       "Description:": "Dark brown/White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/23/ca23980417882377bdb902d73f7331e2661bde65.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/23/ca23980417882377bdb902d73f7331e2661bde65.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1199249001",
@@ -1403,7 +1556,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/d8/24/d824a2fd35662e86454c9278f524eabae7e77654.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d8/24/d824a2fd35662e86454c9278f524eabae7e77654.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1199249015",
@@ -1422,7 +1578,10 @@
       "Description:": "Light grey marl, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/4b/cb/4bcb44d265f4a285edfff310178e2b91ceb79e31.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4b/cb/4bcb44d265f4a285edfff310178e2b91ceb79e31.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1299795002",
@@ -1440,7 +1599,10 @@
       "Style:": "Multiway bra Pull-on trousers",
       "Description:": "Khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/78/ed/78ed63138b0d27dcca6fd8ad361fbd59b4000e21.jpg"
+    "productImage": "https://image.hm.com/assets/hm/78/ed/78ed63138b0d27dcca6fd8ad361fbd59b4000e21.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1035873001",
@@ -1457,7 +1619,8 @@
       "Style:": "Flared",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/3a/d1/3ad1bae18d45109b2b19159677314bec11b167cd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3a/d1/3ad1bae18d45109b2b19159677314bec11b167cd.jpg",
+    "roles": []
   },
   {
     "item_id": "1281439001",
@@ -1477,7 +1640,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/b8/9c/b89c94ba3f668d3dcbd6b29d4e20c1142b0e5786.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b8/9c/b89c94ba3f668d3dcbd6b29d4e20c1142b0e5786.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1281439003",
@@ -1496,7 +1662,10 @@
       "Description:": "Greige, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/bd/7f/bd7f6e40df76eb0179bb494f28a932bd9b905caf.jpg"
+    "productImage": "https://image.hm.com/assets/hm/bd/7f/bd7f6e40df76eb0179bb494f28a932bd9b905caf.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1281439007",
@@ -1516,7 +1685,10 @@
       "Description:": "Light grey marl, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/5d/7d/5d7d9546e6e6e6b42c6d203e6ab80a9c7a1910e0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5d/7d/5d7d9546e6e6e6b42c6d203e6ab80a9c7a1910e0.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1283558001",
@@ -1535,7 +1707,10 @@
       "Style:": "Wide leg",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/07/3f/073f7253ffed489b284a0cfabf6f4b9bbb91b833.jpg"
+    "productImage": "https://image.hm.com/assets/hm/07/3f/073f7253ffed489b284a0cfabf6f4b9bbb91b833.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1296063003",
@@ -1554,7 +1729,10 @@
       "Description:": "Navy blue/White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/35/f1/35f15535067aa8f6d252ab5c7b712642158ffb31.jpg"
+    "productImage": "https://image.hm.com/assets/hm/35/f1/35f15535067aa8f6d252ab5c7b712642158ffb31.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1224090012",
@@ -1573,7 +1751,10 @@
       "Style:": "Suit trousers",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/49/8d/498d46a6414d80a06eec57a94fd688da06cfd49a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/49/8d/498d46a6414d80a06eec57a94fd688da06cfd49a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1275509003",
@@ -1592,7 +1773,10 @@
       "Description:": "White, Solid colour",
       "Nice to know:": "H&M Premium Selection"
     },
-    "productImage": "https://image.hm.com/assets/hm/96/82/9682e84e1d98c78c9fbf64ee29c1b96d50b25b37.jpg"
+    "productImage": "https://image.hm.com/assets/hm/96/82/9682e84e1d98c78c9fbf64ee29c1b96d50b25b37.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292768003",
@@ -1612,7 +1796,10 @@
       "Description:": "Grey/White, Pinstriped",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/9c/7a/9c7a1e5d7918d6a7715d8a1df2dfa9bf6ee7f935.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9c/7a/9c7a1e5d7918d6a7715d8a1df2dfa9bf6ee7f935.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1283192003",
@@ -1630,7 +1817,10 @@
       "Style:": "High leg Wide leg",
       "Description:": "Dark khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e4/31/e431a33836d795601753f3dfb317fd6c41f38d2c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e4/31/e431a33836d795601753f3dfb317fd6c41f38d2c.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1264853008",
@@ -1647,7 +1837,10 @@
       "Style:": "Straight leg",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0e/7d/0e7dc7757d08aecb15500c6a55004d3752d260d7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0e/7d/0e7dc7757d08aecb15500c6a55004d3752d260d7.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1224090010",
@@ -1666,7 +1859,10 @@
       "Style:": "Suit trousers",
       "Description:": "Brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/3a/7b/3a7b66b0b1838cdad65a16a4f711b6b0f15f6380.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3a/7b/3a7b66b0b1838cdad65a16a4f711b6b0f15f6380.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1259079003",
@@ -1686,7 +1882,10 @@
       "Description:": "Navy blue, Solid colour",
       "Nice to know:": "H&M Premium Selection"
     },
-    "productImage": "https://image.hm.com/assets/hm/57/78/5778f35eae6488cb1cd98f541e215801a2624abe.jpg"
+    "productImage": "https://image.hm.com/assets/hm/57/78/5778f35eae6488cb1cd98f541e215801a2624abe.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1272565012",
@@ -1705,7 +1904,10 @@
       "Description:": "Navy blue/White, Striped",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/88/06/8806cd6a79f30db0bde0b69f93d33c813934e14f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/88/06/8806cd6a79f30db0bde0b69f93d33c813934e14f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1259065015",
@@ -1724,7 +1926,10 @@
       "Style:": "Pull-on trousers Straight leg",
       "Description:": "Beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e3/78/e37845ef2d55bf311dd6892648da218a41b632e9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e3/78/e37845ef2d55bf311dd6892648da218a41b632e9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1281439010",
@@ -1744,7 +1949,10 @@
       "Description:": "Dark khaki green, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/4d/ce/4dce72169dcfd45d676efa87a9e853df3218eefa.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4d/ce/4dce72169dcfd45d676efa87a9e853df3218eefa.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293761006",
@@ -1762,7 +1970,10 @@
       "Style:": "Suit trousers Wide leg",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/02/f5/02f5ed5c900933644aaa4ba8ac7907f308e86ecc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/02/f5/02f5ed5c900933644aaa4ba8ac7907f308e86ecc.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1133068024",
@@ -1781,7 +1992,10 @@
       "Style:": "Straight leg Wide leg",
       "Description:": "Navy blue"
     },
-    "productImage": "https://image.hm.com/assets/hm/af/8b/af8b49f9397e7c7aa5bcb99ee179363e3f1fbbf3.jpg"
+    "productImage": "https://image.hm.com/assets/hm/af/8b/af8b49f9397e7c7aa5bcb99ee179363e3f1fbbf3.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1195870010",
@@ -1800,7 +2014,10 @@
       "Style:": "Straight leg",
       "Description:": "Beige marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/eb/23/eb237a6e6887d90ec46e7105b2369e3256d99273.jpg"
+    "productImage": "https://image.hm.com/assets/hm/eb/23/eb237a6e6887d90ec46e7105b2369e3256d99273.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292768001",
@@ -1819,7 +2036,10 @@
       "Description:": "Grey, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/0a/53/0a53ed122d18864fb6e9fa72492f893deeb43c84.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0a/53/0a53ed122d18864fb6e9fa72492f893deeb43c84.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1230818008",
@@ -1838,7 +2058,10 @@
       "Description:": "Light beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/f0/b0/f0b05c6c83552b0d38ef6f0d58daa94302ebfd33.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f0/b0/f0b05c6c83552b0d38ef6f0d58daa94302ebfd33.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1199249046",
@@ -1857,7 +2080,10 @@
       "Description:": "Light pink, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/e4/b5/e4b566220f4ecae89973ee4ae362e14c932f47c7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e4/b5/e4b566220f4ecae89973ee4ae362e14c932f47c7.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1276797014",
@@ -1877,7 +2103,8 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Supersoft"
     },
-    "productImage": "https://image.hm.com/assets/hm/f6/dc/f6dcc262adbced0731e6f9e6e3954fcd8c134b53.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f6/dc/f6dcc262adbced0731e6f9e6e3954fcd8c134b53.jpg",
+    "roles": []
   },
   {
     "item_id": "1264853007",
@@ -1895,7 +2122,10 @@
       "Style:": "Straight leg",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/42/56/4256db80a0d3247fab6f095a18f04c2f0f6c54e4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/42/56/4256db80a0d3247fab6f095a18f04c2f0f6c54e4.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1261908001",
@@ -1913,7 +2143,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/49/ed/49ed1c597e3b86d39ebb8b2c88652147daa42ea7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/49/ed/49ed1c597e3b86d39ebb8b2c88652147daa42ea7.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "0579541001",
@@ -1930,7 +2163,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/28/74/2874d9c939be32d2a29a169ef39be46379f091d1.jpg"
+    "productImage": "https://image.hm.com/assets/hm/28/74/2874d9c939be32d2a29a169ef39be46379f091d1.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1237776014",
@@ -1948,7 +2184,10 @@
       "Neckline:": "Round neck",
       "Description:": "Brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/42/5b/425b16ff0bbb7e1571214b1954c0b1a6709375ff.jpg"
+    "productImage": "https://image.hm.com/assets/hm/42/5b/425b16ff0bbb7e1571214b1954c0b1a6709375ff.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1308185001",
@@ -1966,7 +2205,10 @@
       "Neckline:": "Round neck",
       "Description:": "Beige marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/85/ea/85eae7f9cc2acd66f70a889b43eafe10f2074836.jpg"
+    "productImage": "https://image.hm.com/assets/hm/85/ea/85eae7f9cc2acd66f70a889b43eafe10f2074836.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1246581011",
@@ -1983,7 +2225,10 @@
       "Neckline:": "Round neck",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/20/6e/206ee90a452bc4fb2d0ba4aca459a4cde4aa3b59.jpg"
+    "productImage": "https://image.hm.com/assets/hm/20/6e/206ee90a452bc4fb2d0ba4aca459a4cde4aa3b59.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1307156001",
@@ -2001,7 +2246,10 @@
       "Neckline:": "V-neck",
       "Description:": "Bright red, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/aa/39/aa39e9de35812bec5e05089c6401f1d8045590a9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/aa/39/aa39e9de35812bec5e05089c6401f1d8045590a9.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1303363002",
@@ -2019,7 +2267,10 @@
       "Neckline:": "V-neck",
       "Description:": "Dark khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/b4/55/b45599e61e6e44526ae336f61d330b0d603a171c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b4/55/b45599e61e6e44526ae336f61d330b0d603a171c.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1247671007",
@@ -2037,7 +2288,10 @@
       "Neckline:": "Round neck",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/45/49/454932cbb7a8579c6002f5777afb08b7c78e0a80.jpg"
+    "productImage": "https://image.hm.com/assets/hm/45/49/454932cbb7a8579c6002f5777afb08b7c78e0a80.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1237776017",
@@ -2054,7 +2308,10 @@
       "Neckline:": "Round neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6f/a6/6fa6c3aabf0c3855121a57cca4fd89e1fc52ec50.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6f/a6/6fa6c3aabf0c3855121a57cca4fd89e1fc52ec50.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1169364025",
@@ -2072,7 +2329,11 @@
       "Neckline:": "Round neck",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/94/64/946400113954c68e775392735e5284a298782324.jpg"
+    "productImage": "https://image.hm.com/assets/hm/94/64/946400113954c68e775392735e5284a298782324.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1169364022",
@@ -2090,7 +2351,11 @@
       "Neckline:": "Round neck",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6a/d6/6ad6f99d6ce7fde71e3bb3c7163491972cac2e11.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6a/d6/6ad6f99d6ce7fde71e3bb3c7163491972cac2e11.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1299721001",
@@ -2108,7 +2373,10 @@
       "Neckline:": "Round neck",
       "Description:": "Beige marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/89/53/89534ff540160a5b9235f28b7bffce5d737515f3.jpg"
+    "productImage": "https://image.hm.com/assets/hm/89/53/89534ff540160a5b9235f28b7bffce5d737515f3.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1297892003",
@@ -2126,7 +2394,10 @@
       "Collar:": "Turn-down collar",
       "Description:": "Beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/f9/e2/f9e29b6dd4c4619dca27d78494a32b68114cffe0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f9/e2/f9e29b6dd4c4619dca27d78494a32b68114cffe0.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "0579541192",
@@ -2142,7 +2413,10 @@
       "Description:": "Dark brown, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/22/e7/22e78842c6524c65ae5fa3a5cec3ddeb28b1809f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/22/e7/22e78842c6524c65ae5fa3a5cec3ddeb28b1809f.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1169364024",
@@ -2160,7 +2434,11 @@
       "Neckline:": "Round neck",
       "Description:": "Dark grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/39/11/39112c82de2eb11ad11bbd2de0100c312dca7434.jpg"
+    "productImage": "https://image.hm.com/assets/hm/39/11/39112c82de2eb11ad11bbd2de0100c312dca7434.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "0579541072",
@@ -2177,7 +2455,10 @@
       "Description:": "Cream, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/ad/0c/ad0c41fae24485c07beb08a76e41fd4242eb25ab.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ad/0c/ad0c41fae24485c07beb08a76e41fd4242eb25ab.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1169364023",
@@ -2194,7 +2475,11 @@
       "Neckline:": "Round neck",
       "Description:": "Light yellow, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/a6/a9/a6a99bddc210e7e3e93765037b36adb0a7770969.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a6/a9/a6a99bddc210e7e3e93765037b36adb0a7770969.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1248631012",
@@ -2212,7 +2497,10 @@
       "Neckline:": "Round neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/96/23/962352ca6df674f75f639f7a67eda0d0b37f6f65.jpg"
+    "productImage": "https://image.hm.com/assets/hm/96/23/962352ca6df674f75f639f7a67eda0d0b37f6f65.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1082853048",
@@ -2229,7 +2517,11 @@
       "Neckline:": "Round neck",
       "Description:": "Light beige marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6f/86/6f86d2926fdf32a379c7b90651907f5fbc7be558.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6f/86/6f86d2926fdf32a379c7b90651907f5fbc7be558.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1295387004",
@@ -2247,7 +2539,10 @@
       "Neckline:": "Round neck",
       "Description:": "Dusty pink, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/3b/91/3b91a55eb63f8b2ca7cbfd5c352364a5ded40592.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3b/91/3b91a55eb63f8b2ca7cbfd5c352364a5ded40592.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1289653004",
@@ -2265,7 +2560,10 @@
       "Description:": "Dark green, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/9e/22/9e221a2cc88e1f78563833271d3d326c3022548b.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9e/22/9e221a2cc88e1f78563833271d3d326c3022548b.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1093199011",
@@ -2284,7 +2582,11 @@
       "Neckline:": "Polo-neck",
       "Description:": "Beige marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/5c/46/5c46c120a12c1a148c4e8294014946575bd91b80.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5c/46/5c46c120a12c1a148c4e8294014946575bd91b80.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "0579541198",
@@ -2300,7 +2602,10 @@
       "Description:": "Olive green, Solid colour",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/9e/41/9e41a140152d0035b9e833ead8854d57e610cbd4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9e/41/9e41a140152d0035b9e833ead8854d57e610cbd4.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1299196001",
@@ -2318,7 +2623,10 @@
       "Neckline:": "Round neck",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/c3/c5/c3c5b537ec47dad7956a15814a7b62b0a556e272.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c3/c5/c3c5b537ec47dad7956a15814a7b62b0a556e272.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1293121003",
@@ -2335,7 +2643,11 @@
       "Style:": "Off-the-shoulder",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e0/6e/e06e88557fbe2eab43dbff9f5809b9357536ee32.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e0/6e/e06e88557fbe2eab43dbff9f5809b9357536ee32.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1237776011",
@@ -2353,7 +2665,10 @@
       "Neckline:": "Round neck",
       "Description:": "Black/Cream, Block-coloured"
     },
-    "productImage": "https://image.hm.com/assets/hm/36/11/3611525a6666f1dcb8820fa8351b5f50eddf5ac6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/36/11/3611525a6666f1dcb8820fa8351b5f50eddf5ac6.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1293121001",
@@ -2370,7 +2685,11 @@
       "Style:": "Off-the-shoulder",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ab/91/ab91aadf3f0ba4ad8583d2239ca8940be0846676.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ab/91/ab91aadf3f0ba4ad8583d2239ca8940be0846676.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1246581010",
@@ -2388,7 +2707,10 @@
       "Neckline:": "Round neck",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d6/83/d6834b386633b6e704e86bc2d2abcb1cea7d2eca.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d6/83/d6834b386633b6e704e86bc2d2abcb1cea7d2eca.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1289600008",
@@ -2406,7 +2728,10 @@
       "Neckline:": "Round neck",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/12/67/1267f612dee3443088caf4bd40a985a5a09d0333.jpg"
+    "productImage": "https://image.hm.com/assets/hm/12/67/1267f612dee3443088caf4bd40a985a5a09d0333.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1248631001",
@@ -2423,7 +2748,10 @@
       "Neckline:": "Round neck",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ee/b1/eeb1d3d116d617388691d50825b0616a68eedeca.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ee/b1/eeb1d3d116d617388691d50825b0616a68eedeca.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1245736003",
@@ -2442,7 +2770,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/9a/e3/9ae355498951b9c6df4d76d325a5b2eb162f50b5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9a/e3/9ae355498951b9c6df4d76d325a5b2eb162f50b5.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1237776012",
@@ -2460,7 +2791,10 @@
       "Neckline:": "Round neck",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/4e/69/4e69911e68ba2654f4f528afe463e8da5cb8c500.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4e/69/4e69911e68ba2654f4f528afe463e8da5cb8c500.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1297861004",
@@ -2478,7 +2812,10 @@
       "Description:": "Burgundy/Pink, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/6e/3f/6e3ff351c2fbb4157e57d872617f91c8b34d6d9f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6e/3f/6e3ff351c2fbb4157e57d872617f91c8b34d6d9f.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1246584004",
@@ -2495,7 +2832,11 @@
       "Neckline:": "Polo-neck",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/5c/65/5c65d779ef756253e59f8b32864171fb27497394.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5c/65/5c65d779ef756253e59f8b32864171fb27497394.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1239431008",
@@ -2512,7 +2853,10 @@
       "Neckline:": "Round neck",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/3c/89/3c8994a28d6c3ad71d3599adf1a5ac90563ab703.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3c/89/3c8994a28d6c3ad71d3599adf1a5ac90563ab703.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1264094004",
@@ -2528,7 +2872,10 @@
       "Neckline:": "Round neck",
       "Description:": "Light blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/e0/cae0227913447a84f37f2e9bc6ae323f05467085.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/e0/cae0227913447a84f37f2e9bc6ae323f05467085.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1277540001",
@@ -2546,7 +2893,10 @@
       "Neckline:": "Round neck",
       "Description:": "Red, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/51/53/5153867e7c7afef9461c637d07db28b376622fe9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/51/53/5153867e7c7afef9461c637d07db28b376622fe9.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "0579541174",
@@ -2562,7 +2912,10 @@
       "Description:": "White/Black, Striped",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/55/c5/55c5bc9bd2d1d58411cf10b8746a4bdeb16c85cd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/55/c5/55c5bc9bd2d1d58411cf10b8746a4bdeb16c85cd.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1289642002",
@@ -2582,7 +2935,10 @@
       "Description:": "Dark blue/White/Red, Argyle-patterned",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/46/25/4625c2d647b027cd213d8809af0af379de605a85.jpg"
+    "productImage": "https://image.hm.com/assets/hm/46/25/4625c2d647b027cd213d8809af0af379de605a85.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1309874001",
@@ -2602,7 +2958,10 @@
       "Sleeve Style:": "Puff sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/80/9a/809ac7e7ee824a4ece10bc42dd77d5647f45620c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/80/9a/809ac7e7ee824a4ece10bc42dd77d5647f45620c.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1309875001",
@@ -2622,7 +2981,10 @@
       "Neckline:": "V-neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/79/61/79611179fe9c1cee0adb1f6e56108b3c54a2e470.jpg"
+    "productImage": "https://image.hm.com/assets/hm/79/61/79611179fe9c1cee0adb1f6e56108b3c54a2e470.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1290269003",
@@ -2641,7 +3003,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "Blue/White, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/34/d8/34d8a7668a743849c7ccfb7538934ec658f0f753.jpg"
+    "productImage": "https://image.hm.com/assets/hm/34/d8/34d8a7668a743849c7ccfb7538934ec658f0f753.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1273994010",
@@ -2661,7 +3027,10 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "White/Blue, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/30/7d/307dbdee5e1fd374f0b4176d03f95fb824f3ef76.jpg"
+    "productImage": "https://image.hm.com/assets/hm/30/7d/307dbdee5e1fd374f0b4176d03f95fb824f3ef76.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1273994008",
@@ -2681,7 +3050,10 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "White/Yellow/Green, Patterned, Lemons"
     },
-    "productImage": "https://image.hm.com/assets/hm/11/ea/11eafc0f1c0f490a10e4c8adc00fb5a19bd18354.jpg"
+    "productImage": "https://image.hm.com/assets/hm/11/ea/11eafc0f1c0f490a10e4c8adc00fb5a19bd18354.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1288338004",
@@ -2699,7 +3071,10 @@
       "Neckline:": "V-neck",
       "Description:": "Dark khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/c0/c3/c0c36e90c5b9f3e1af70bf7de36bcaffb70430a5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c0/c3/c0c36e90c5b9f3e1af70bf7de36bcaffb70430a5.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1294732003",
@@ -2719,7 +3094,10 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/f4/5a/f45ad01c93f6162013293b87a5cc08edc03b39e5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f4/5a/f45ad01c93f6162013293b87a5cc08edc03b39e5.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296546001",
@@ -2739,7 +3117,10 @@
       "Description:": "Light beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/06/62/0662dba6b3c70891be37eda37b1237621f277e7d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/06/62/0662dba6b3c70891be37eda37b1237621f277e7d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1266751003",
@@ -2757,7 +3138,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "Light blue/White/Dark blue, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/0b/f2/0bf2de9538df0f71e84ea09f9514cd9cc344b661.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0b/f2/0bf2de9538df0f71e84ea09f9514cd9cc344b661.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1299730001",
@@ -2776,7 +3161,10 @@
       "Sleeve Style:": "Balloon sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/58/ca5836b11682525539173efeebffbab9efdde078.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/58/ca5836b11682525539173efeebffbab9efdde078.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1303788002",
@@ -2797,7 +3185,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/d3/36/d336ea616013f7975d0002a37708fd059fddc936.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d3/36/d336ea616013f7975d0002a37708fd059fddc936.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1295098001",
@@ -2817,7 +3208,10 @@
       "Sleeve Style:": "Butterfly sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/43/5a/435a5ccdfc8bd60cca93a489ca2eeaa61379acfa.jpg"
+    "productImage": "https://image.hm.com/assets/hm/43/5a/435a5ccdfc8bd60cca93a489ca2eeaa61379acfa.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1300636001",
@@ -2838,7 +3232,10 @@
       "Sleeve Style:": "Balloon sleeve Raglan sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e2/7c/e27ca78d6c91a618daa9e0a353248ee9978b18b2.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e2/7c/e27ca78d6c91a618daa9e0a353248ee9978b18b2.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1290575001",
@@ -2859,7 +3256,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/61/90/619004f7a2be687c0eb33113ff32be3c79ba5bcd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/61/90/619004f7a2be687c0eb33113ff32be3c79ba5bcd.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296667004",
@@ -2879,7 +3279,11 @@
       "Description:": "Grey, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/3b/e2/3be20c809ea4b2a5d9543380e8e5e404f599af43.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3b/e2/3be20c809ea4b2a5d9543380e8e5e404f599af43.jpg",
+    "roles": [
+      "base",
+      "bottom"
+    ]
   },
   {
     "item_id": "1258821004",
@@ -2896,7 +3300,10 @@
       "Neckline:": "Deep neckline",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/75/b1/75b1ee26accd423eb63f7ef254970326c955ca1e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/75/b1/75b1ee26accd423eb63f7ef254970326c955ca1e.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1296539001",
@@ -2915,7 +3322,10 @@
       "Description:": "Light beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/e9/79/e97996134ddb565ebfdb36b0330472d92253ad99.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e9/79/e97996134ddb565ebfdb36b0330472d92253ad99.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1297195004",
@@ -2935,7 +3345,10 @@
       "Sleeve Style:": "Cap sleeve",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/38/f0/38f07ea8abc4e295a105282a4e7401385e9d9d33.jpg"
+    "productImage": "https://image.hm.com/assets/hm/38/f0/38f07ea8abc4e295a105282a4e7401385e9d9d33.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1290269001",
@@ -2953,7 +3366,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/38/d6/38d60b3d5c38d614435176db18dbdf6b27826e63.jpg"
+    "productImage": "https://image.hm.com/assets/hm/38/d6/38d60b3d5c38d614435176db18dbdf6b27826e63.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1280449007",
@@ -2974,7 +3391,10 @@
       "Sleeve Style:": "Flutter sleeve",
       "Description:": "Blue/White, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/ac/d6/acd6bf5d70c0c81137d200655870195c91cb90b5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ac/d6/acd6bf5d70c0c81137d200655870195c91cb90b5.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "0925212004",
@@ -2992,7 +3412,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "Light blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/61/bc/61bc56fb2c9c8d795b68052fadae14be0ab7b47c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/61/bc/61bc56fb2c9c8d795b68052fadae14be0ab7b47c.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "0925212001",
@@ -3011,7 +3435,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/84/a3/84a3851d656f3f86ba565ef388a7be04c4d68a8f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/84/a3/84a3851d656f3f86ba565ef388a7be04c4d68a8f.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1219107002",
@@ -3031,7 +3459,11 @@
       "Description:": "White, Solid colour",
       "Nice to know:": "H&M Premium Selection"
     },
-    "productImage": "https://image.hm.com/assets/hm/d9/51/d9511b4b4b5677df45acd49f98c0d2143f76d4f0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d9/51/d9511b4b4b5677df45acd49f98c0d2143f76d4f0.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1185135006",
@@ -3050,7 +3482,10 @@
       "Collar:": "Frilled collar",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0d/1c/0d1c006947e6f1a72299cdc6a243ccfa26d894bd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0d/1c/0d1c006947e6f1a72299cdc6a243ccfa26d894bd.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1303729002",
@@ -3068,7 +3503,10 @@
       "Collar:": "Stand collar",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/65/03/650347e2df7f0946c1d86cfc241c1fe8ff6c21e3.jpg"
+    "productImage": "https://image.hm.com/assets/hm/65/03/650347e2df7f0946c1d86cfc241c1fe8ff6c21e3.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "0925212019",
@@ -3086,7 +3524,11 @@
       "Collar:": "Turn-down collar",
       "Description:": "Light pink"
     },
-    "productImage": "https://image.hm.com/assets/hm/34/9e/349edbc0267ee0dae6071b42d1776957d9d29afc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/34/9e/349edbc0267ee0dae6071b42d1776957d9d29afc.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1297835001",
@@ -3104,7 +3546,10 @@
       "Style:": "Barrel leg",
       "Description:": "Dark denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/74/bc/74bc804be4e9598a3f66ae9ac54c08fad98b4468.jpg"
+    "productImage": "https://image.hm.com/assets/hm/74/bc/74bc804be4e9598a3f66ae9ac54c08fad98b4468.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1261750008",
@@ -3125,7 +3570,10 @@
       "Concept:": "DENIM",
       "Collection:": "S/S 2025"
     },
-    "productImage": "https://image.hm.com/assets/hm/38/61/38617640d29102ab7d7861556ae710a0d4e1ce0f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/38/61/38617640d29102ab7d7861556ae710a0d4e1ce0f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1294598005",
@@ -3144,7 +3592,10 @@
       "Style:": "Wide leg",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d1/ba/d1ba092b2fd95c3433e959f8b16bc9defc262930.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d1/ba/d1ba092b2fd95c3433e959f8b16bc9defc262930.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1289533003",
@@ -3163,7 +3614,10 @@
       "Description:": "Light denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/e7/bb/e7bb97b938bfc481ffb12354805018146e5c21b6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e7/bb/e7bb97b938bfc481ffb12354805018146e5c21b6.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1294598003",
@@ -3182,7 +3636,10 @@
       "Style:": "Wide leg",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0b/da/0bdad016d32609ca5f0c0d8fe855960deebcda40.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0b/da/0bdad016d32609ca5f0c0d8fe855960deebcda40.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "0871889084",
@@ -3200,7 +3657,10 @@
       "Description:": "Denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/23/a3/23a3728538fd66f113404f3d736727de870bac47.jpg"
+    "productImage": "https://image.hm.com/assets/hm/23/a3/23a3728538fd66f113404f3d736727de870bac47.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1261750007",
@@ -3220,7 +3680,10 @@
       "Concept:": "DENIM",
       "Collection:": "S/S 2025"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/33/ca332cd29707659f1e81721124294b6dcf0edfdc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/33/ca332cd29707659f1e81721124294b6dcf0edfdc.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1109636038",
@@ -3239,7 +3702,10 @@
       "Description:": "Denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/fd/cc/fdcccf147a00998908092182221f963bf9adc380.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fd/cc/fdcccf147a00998908092182221f963bf9adc380.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1239854022",
@@ -3258,7 +3724,10 @@
       "Description:": "Light denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/3f/c5/3fc5f90808aef8564eb0f91af505cf2ce3111e21.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3f/c5/3fc5f90808aef8564eb0f91af505cf2ce3111e21.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1297835002",
@@ -3277,7 +3746,10 @@
       "Style:": "Barrel leg",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/64/73/647373cdc1ddc471b8cf3c006408b2f6e6a4d779.jpg"
+    "productImage": "https://image.hm.com/assets/hm/64/73/647373cdc1ddc471b8cf3c006408b2f6e6a4d779.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293853009",
@@ -3295,7 +3767,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/cd/46/cd46b40731cd51ddacb4109824bd8735a17f00a9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cd/46/cd46b40731cd51ddacb4109824bd8735a17f00a9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1109636039",
@@ -3315,7 +3790,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/8a/22/8a226811458a33820339340a00ba2b20e24d7aa4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/8a/22/8a226811458a33820339340a00ba2b20e24d7aa4.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293297005",
@@ -3334,7 +3812,10 @@
       "Style:": "Wide leg",
       "Description:": "Light denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/78/91/7891d021bf919e3a81e45dd140eba254cbe44474.jpg"
+    "productImage": "https://image.hm.com/assets/hm/78/91/7891d021bf919e3a81e45dd140eba254cbe44474.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1236909018",
@@ -3354,7 +3835,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/48/88/4888098f9b2bffe137ffc09f2f5c2ae2ee8d0c63.jpg"
+    "productImage": "https://image.hm.com/assets/hm/48/88/4888098f9b2bffe137ffc09f2f5c2ae2ee8d0c63.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "0871889043",
@@ -3373,7 +3857,10 @@
       "Description:": "Light denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/e7/cf/e7cf702da2da6cbd1cbd75a58e85720734131980.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e7/cf/e7cf702da2da6cbd1cbd75a58e85720734131980.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1263676001",
@@ -3391,7 +3878,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/78/06/780696caecb7560e8de8bf5e82e27596b2edd7e8.jpg"
+    "productImage": "https://image.hm.com/assets/hm/78/06/780696caecb7560e8de8bf5e82e27596b2edd7e8.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1233274002",
@@ -3410,7 +3900,10 @@
       "Description:": "Denim blue, Solid colour",
       "Concept:": "MAMA"
     },
-    "productImage": "https://image.hm.com/assets/hm/78/ca/78ca264f8aa834b8e1858b7167ec85912cd91587.jpg"
+    "productImage": "https://image.hm.com/assets/hm/78/ca/78ca264f8aa834b8e1858b7167ec85912cd91587.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1045459058",
@@ -3428,7 +3921,10 @@
       "Fit:": "Slim fit",
       "Description:": "Dark denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ac/6e/ac6e5274e7d5a17c69ce57eb6dc7e3414367d6f1.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ac/6e/ac6e5274e7d5a17c69ce57eb6dc7e3414367d6f1.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293853010",
@@ -3446,7 +3942,10 @@
       "Description:": "Dark grey, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/40/17/4017094e521e80c9ea5544b00f19f550b71c19a6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/40/17/4017094e521e80c9ea5544b00f19f550b71c19a6.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293853008",
@@ -3464,7 +3963,10 @@
       "Description:": "Grey, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/77/f3/77f3773deda71d266dfa8f5fdb91827cd4ecf52d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/77/f3/77f3773deda71d266dfa8f5fdb91827cd4ecf52d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1207354016",
@@ -3483,7 +3985,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/0c/5d/0c5d1c4971a174cf01248f54b61109dacd3a30d9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0c/5d/0c5d1c4971a174cf01248f54b61109dacd3a30d9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1298072001",
@@ -3501,7 +4006,10 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/32/34/3234d1ae047a7addf5632335ec851d73a6543eea.jpg"
+    "productImage": "https://image.hm.com/assets/001/32/34/3234d1ae047a7addf5632335ec851d73a6543eea.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1297402002",
@@ -3518,7 +4026,10 @@
       "Fit:": "Loose fit",
       "Description:": "Dark Blue, Solid colour, Dark Blue"
     },
-    "productImage": "https://image.hm.com/assets/003/a7/3d/a73dd5aed9bcd2d6cded72becd25c536d6d6cc0f.jpg"
+    "productImage": "https://image.hm.com/assets/003/a7/3d/a73dd5aed9bcd2d6cded72becd25c536d6d6cc0f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1045459044",
@@ -3535,7 +4046,10 @@
       "Fit:": "Slim fit",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/6c/4e/6c4e84cf5eaff1924c2a0be58d03527dc233038a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6c/4e/6c4e84cf5eaff1924c2a0be58d03527dc233038a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1255289001",
@@ -3557,7 +4071,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Supersoft"
     },
-    "productImage": "https://image.hm.com/assets/hm/75/3c/753c727e12e4e6d500d79fcde526ab66673c8212.jpg"
+    "productImage": "https://image.hm.com/assets/hm/75/3c/753c727e12e4e6d500d79fcde526ab66673c8212.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1259175001",
@@ -3575,7 +4092,10 @@
       "Fit:": "Loose fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/a1/e9/a1e92191231e999b857b761905124d465c51f88f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a1/e9/a1e92191231e999b857b761905124d465c51f88f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288135003",
@@ -3593,7 +4113,10 @@
       "Fit:": "Regular fit",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/31/88/3188477c6a5ec790c3a6c7108600465b01266d60.jpg"
+    "productImage": "https://image.hm.com/assets/hm/31/88/3188477c6a5ec790c3a6c7108600465b01266d60.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293657001",
@@ -3612,7 +4135,10 @@
       "Style:": "Tailored shorts",
       "Description:": "Brown/Cream/Black, Checked"
     },
-    "productImage": "https://image.hm.com/assets/hm/17/da/17da1f207d5a781153ebc8bd10d5b368dd8b8a86.jpg"
+    "productImage": "https://image.hm.com/assets/hm/17/da/17da1f207d5a781153ebc8bd10d5b368dd8b8a86.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1273712001",
@@ -3629,7 +4155,10 @@
       "Fit:": "Regular fit",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0c/e9/0ce9078288507499a23182d6605ab67be73899d8.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0c/e9/0ce9078288507499a23182d6605ab67be73899d8.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1273712004",
@@ -3646,7 +4175,10 @@
       "Fit:": "Regular fit",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/11/21/11213bfe0b53434664d55f2f5c44a77bfe13e37d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/11/21/11213bfe0b53434664d55f2f5c44a77bfe13e37d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1273712003",
@@ -3663,7 +4195,10 @@
       "Fit:": "Regular fit",
       "Description:": "Dark grey, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0a/73/0a73c0d3f7f13410d05cf876537690f6a1aaf4ef.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0a/73/0a73c0d3f7f13410d05cf876537690f6a1aaf4ef.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1285109001",
@@ -3680,7 +4215,10 @@
       "Fit:": "Loose fit",
       "Description:": "Beige/Dark brown, Leopard-print"
     },
-    "productImage": "https://image.hm.com/assets/hm/f1/60/f1607e10eebae15d8d12b7f2f7ca9df961a642df.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f1/60/f1607e10eebae15d8d12b7f2f7ca9df961a642df.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1152096048",
@@ -3700,7 +4238,11 @@
       "Description:": "Cream/Black, Striped",
       "Concept:": "BASICS"
     },
-    "productImage": "https://image.hm.com/assets/hm/6e/79/6e79bf2e1bfab408b1f9d32547014ef6c60372f0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6e/79/6e79bf2e1bfab408b1f9d32547014ef6c60372f0.jpg",
+    "roles": [
+      "base",
+      "bottom"
+    ]
   },
   {
     "item_id": "1222124005",
@@ -3717,7 +4259,10 @@
       "Fit:": "Slim fit",
       "Description:": "Light denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/1d/e3/1de3913748fd9f0e29b393b8198d41731ce33fbb.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1d/e3/1de3913748fd9f0e29b393b8198d41731ce33fbb.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1266486001",
@@ -3737,7 +4282,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "With pocket"
     },
-    "productImage": "https://image.hm.com/assets/hm/d7/79/d779933c62d66aa4ae2dfa7389bf21541e87df46.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d7/79/d779933c62d66aa4ae2dfa7389bf21541e87df46.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1222124007",
@@ -3754,7 +4302,10 @@
       "Fit:": "Slim fit",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/0f/02/0f0202ce65ea61e8b0719e7e00c71cc71750240f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0f/02/0f0202ce65ea61e8b0719e7e00c71cc71750240f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288135001",
@@ -3772,7 +4323,10 @@
       "Fit:": "Regular fit",
       "Description:": "Cream/Black, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/40/e2/40e2714be9ed67405f1e35e3c48f3e5d7b87a323.jpg"
+    "productImage": "https://image.hm.com/assets/hm/40/e2/40e2714be9ed67405f1e35e3c48f3e5d7b87a323.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293471002",
@@ -3790,7 +4344,10 @@
       "Style:": "Bermuda shorts Tailored shorts",
       "Description:": "Light beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/53/a4/53a4ef22babf4b3b9920c89ce5f6f3501a666cea.jpg"
+    "productImage": "https://image.hm.com/assets/hm/53/a4/53a4ef22babf4b3b9920c89ce5f6f3501a666cea.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1258880003",
@@ -3807,7 +4364,10 @@
       "Description:": "Light denim blue, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/ff/6d/ff6d775691e0cdb7c13f7ec56db37ca0f4cf6cd0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ff/6d/ff6d775691e0cdb7c13f7ec56db37ca0f4cf6cd0.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1274368001",
@@ -3825,7 +4385,10 @@
       "Fit:": "Regular fit",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/1f/91/1f91c564fccf07ff31e2a7bbd59024239a943723.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1f/91/1f91c564fccf07ff31e2a7bbd59024239a943723.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295126001",
@@ -3842,7 +4405,10 @@
       "Fit:": "Regular fit",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/cd/29/cd29a5e485d205ff2919e7e6ef20ee2caf87bcf1.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cd/29/cd29a5e485d205ff2919e7e6ef20ee2caf87bcf1.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1259779005",
@@ -3860,7 +4426,10 @@
       "Description:": "Cream, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/5c/fd/5cfde1431a6c52880e5431c3479eef4cb3aed77d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5c/fd/5cfde1431a6c52880e5431c3479eef4cb3aed77d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1290640001",
@@ -3877,7 +4446,10 @@
       "Description:": "Powder pink, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/1b/5a/1b5a337c93ac22c6e63911a9d7233fe9c2c9360a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1b/5a/1b5a337c93ac22c6e63911a9d7233fe9c2c9360a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295117003",
@@ -3895,7 +4467,10 @@
       "Fit:": "Regular fit",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e6/4b/e64bb0639e54f8fe4d3ea1701f8a36aecb41b941.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e6/4b/e64bb0639e54f8fe4d3ea1701f8a36aecb41b941.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1222124008",
@@ -3912,7 +4487,10 @@
       "Fit:": "Slim fit",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/f7/ad/f7ad029f25eaa1d5a7aa50cd72d19928f0aee4a9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f7/ad/f7ad029f25eaa1d5a7aa50cd72d19928f0aee4a9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1259779004",
@@ -3930,7 +4508,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/3e/68/3e688bfc1e712fc8a85181d5d2dbdb2d351a76dd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3e/68/3e688bfc1e712fc8a85181d5d2dbdb2d351a76dd.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1272698002",
@@ -3951,7 +4532,10 @@
       "Description:": "Dark beige, Solid colour",
       "Concept:": "H&M Move"
     },
-    "productImage": "https://image.hm.com/assets/hm/8a/52/8a52def6454020241a923ca59db22694596f761b.jpg"
+    "productImage": "https://image.hm.com/assets/hm/8a/52/8a52def6454020241a923ca59db22694596f761b.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1299858003",
@@ -3967,7 +4551,10 @@
       "Fit:": "Regular fit",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/82/52/8252566a4e8bb1d76ef82e26c5aaf5afca0f905a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/82/52/8252566a4e8bb1d76ef82e26c5aaf5afca0f905a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292829001",
@@ -3985,7 +4572,10 @@
       "Description:": "Washed black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/2a/35/2a35e652158b8cc40acb0212e52ec824ff89dfe6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2a/35/2a35e652158b8cc40acb0212e52ec824ff89dfe6.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1293165001",
@@ -4005,7 +4595,10 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/96/eb/96ebbfe1f3fd5d4588fbd41321832c8cf749ba64.jpg"
+    "productImage": "https://image.hm.com/assets/hm/96/eb/96ebbfe1f3fd5d4588fbd41321832c8cf749ba64.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1267176002",
@@ -4023,7 +4616,10 @@
       "Description:": "Light beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/ed/22/ed223d242e21901ca5c11a530139cd799d539479.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ed/22/ed223d242e21901ca5c11a530139cd799d539479.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1280369003",
@@ -4041,7 +4637,10 @@
       "Description:": "Light blue/White, Striped",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/6e/c6/6ec6e0e8a375357c5d361cb93215b1d4e5ce2424.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6e/c6/6ec6e0e8a375357c5d361cb93215b1d4e5ce2424.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1255322004",
@@ -4063,7 +4662,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "With pocket"
     },
-    "productImage": "https://image.hm.com/assets/hm/fd/12/fd129f50fcc8a5072df77ecd41982002112dae52.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fd/12/fd129f50fcc8a5072df77ecd41982002112dae52.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1271904001",
@@ -4080,7 +4682,10 @@
       "Fit:": "Regular fit",
       "Description:": "Dark Blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/005/aa/54/aa544017eabd6e6ef59df5d5d34f64946e1fbad9.jpg"
+    "productImage": "https://image.hm.com/assets/005/aa/54/aa544017eabd6e6ef59df5d5d34f64946e1fbad9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292856001",
@@ -4098,7 +4703,10 @@
       "Description:": "Light pink/Blue, Patterned, Palm trees, flamingos",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/bd/96/bd9693f893d78a5e144ad641207c8f86b23a71b4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/bd/96/bd9693f893d78a5e144ad641207c8f86b23a71b4.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1307537002",
@@ -4116,7 +4724,10 @@
       "Style:": "Wrapover",
       "Description:": "Khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ca/a0/caa02b87f1ddde6a595a2f64006d6906295296e7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ca/a0/caa02b87f1ddde6a595a2f64006d6906295296e7.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1294274002",
@@ -4133,7 +4744,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/fc/0d/fc0de363946bbc7775d088105d7f01b3dba38eca.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fc/0d/fc0de363946bbc7775d088105d7f01b3dba38eca.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1296021002",
@@ -4151,7 +4765,10 @@
       "Style:": "Bermuda shorts",
       "Description:": "Light grey, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ad/16/ad16f10a634db071030c6db73f45d629469fb549.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ad/16/ad16f10a634db071030c6db73f45d629469fb549.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1287253002",
@@ -4169,7 +4786,10 @@
       "Fit:": "Loose fit",
       "Description:": "Beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/2e/50/2e50b7f13b6e72a910d59a4a295dde5bebffd280.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2e/50/2e50b7f13b6e72a910d59a4a295dde5bebffd280.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295117002",
@@ -4187,7 +4807,10 @@
       "Fit:": "Regular fit",
       "Description:": "Beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/e6/c1/e6c15556cbef8e91385d2e2409894f35f62748cc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e6/c1/e6c15556cbef8e91385d2e2409894f35f62748cc.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288081003",
@@ -4208,7 +4831,10 @@
       "Sleeve Style:": "Raglan sleeve",
       "Description:": "Beige/Brown"
     },
-    "productImage": "https://image.hm.com/assets/hm/67/f5/67f5e85608bd2587f47b8270687c8971460870c0.jpg"
+    "productImage": "https://image.hm.com/assets/hm/67/f5/67f5e85608bd2587f47b8270687c8971460870c0.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1288081001",
@@ -4229,7 +4855,10 @@
       "Sleeve Style:": "Raglan sleeve",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/11/e7/11e72dfc49893b6377b789d5ad31e442a27d7a3c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/11/e7/11e72dfc49893b6377b789d5ad31e442a27d7a3c.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1298259001",
@@ -4250,7 +4879,10 @@
       "Concept:": "DIVIDED",
       "Nice to know:": "Padded"
     },
-    "productImage": "https://image.hm.com/assets/hm/88/14/88143c34ca7d547fc5c55f22958a2e8c9245fdea.jpg"
+    "productImage": "https://image.hm.com/assets/hm/88/14/88143c34ca7d547fc5c55f22958a2e8c9245fdea.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1293033002",
@@ -4270,7 +4902,10 @@
       "Neckline:": "V-neck",
       "Description:": "Light grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/85/a9/85a91ba9e62326ccaa8991dd233a4031bc463121.jpg"
+    "productImage": "https://image.hm.com/assets/hm/85/a9/85a91ba9e62326ccaa8991dd233a4031bc463121.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1298554001",
@@ -4290,7 +4925,10 @@
       "Style:": "Car coat Single-breasted",
       "Description:": "Black/Beige/Brown, Checked"
     },
-    "productImage": "https://image.hm.com/assets/hm/6c/b2/6cb23234d93e9607bd4a709033769ad5f2967aff.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6c/b2/6cb23234d93e9607bd4a709033769ad5f2967aff.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1288042001",
@@ -4309,7 +4947,10 @@
       "Style:": "Single-breasted",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d0/65/d065f4ef3e19da128b3b22d798785a3a1e1c036a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d0/65/d065f4ef3e19da128b3b22d798785a3a1e1c036a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1301290002",
@@ -4328,7 +4969,10 @@
       "Style:": "Blazer",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/fc/31/fc3151682da13ce0a032c78d7f4cbcc9d5d5897a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fc/31/fc3151682da13ce0a032c78d7f4cbcc9d5d5897a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1296528002",
@@ -4348,7 +4992,10 @@
       "Neckline:": "V-neck",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/68/95/68958e9770063fe8a8ccce9554ee2db44c20bb00.jpg"
+    "productImage": "https://image.hm.com/assets/hm/68/95/68958e9770063fe8a8ccce9554ee2db44c20bb00.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1243210001",
@@ -4370,7 +5017,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Supersoft"
     },
-    "productImage": "https://image.hm.com/assets/hm/79/be/79be6910c338175c2ced088b4fccb22168b28562.jpg"
+    "productImage": "https://image.hm.com/assets/hm/79/be/79be6910c338175c2ced088b4fccb22168b28562.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1296528004",
@@ -4391,7 +5041,10 @@
       "Neckline:": "V-neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/08/11/08117e143ec7a36322dc3fe7a3bf89a96af48259.jpg"
+    "productImage": "https://image.hm.com/assets/hm/08/11/08117e143ec7a36322dc3fe7a3bf89a96af48259.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1309324001",
@@ -4410,7 +5063,10 @@
       "Style:": "Biker",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/3c/3c/3c3c59ed89b967ba086e4cfc27a7916deffa797e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3c/3c/3c3c59ed89b967ba086e4cfc27a7916deffa797e.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1259401001",
@@ -4429,7 +5085,10 @@
       "Description:": "Beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/4a/ef/4aef7fa27ca3af0b0ee7af3f08e618ce64e05ab2.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4a/ef/4aef7fa27ca3af0b0ee7af3f08e618ce64e05ab2.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1264166005",
@@ -4449,7 +5108,10 @@
       "Concept:": "DIVIDED",
       "Nice to know:": "Padded"
     },
-    "productImage": "https://image.hm.com/assets/hm/d2/4a/d24aa7660be51f38f81d778ed07e53e913fe22af.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d2/4a/d24aa7660be51f38f81d778ed07e53e913fe22af.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1282397002",
@@ -4469,7 +5131,10 @@
       "Style:": "Harrington-style jacket",
       "Description:": "Dark khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/5a/fb/5afb3caadf90296f7be70233e427a2ce49e6d0f4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/5a/fb/5afb3caadf90296f7be70233e427a2ce49e6d0f4.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1244574001",
@@ -4487,7 +5152,10 @@
       "Style:": "Blazer Single-breasted",
       "Description:": "Dark grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d1/d4/d1d4022cf22a4fc5ce1ed9d585aa3b479cc11fee.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d1/d4/d1d4022cf22a4fc5ce1ed9d585aa3b479cc11fee.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1290871002",
@@ -4506,7 +5174,10 @@
       "Neckline:": "Round neck",
       "Description:": "Black/White"
     },
-    "productImage": "https://image.hm.com/assets/hm/aa/f6/aaf60a2bea8c02282f7e023dfabcc1e610b8a750.jpg"
+    "productImage": "https://image.hm.com/assets/hm/aa/f6/aaf60a2bea8c02282f7e023dfabcc1e610b8a750.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1293033001",
@@ -4526,7 +5197,10 @@
       "Neckline:": "V-neck",
       "Description:": "Greige, Checked"
     },
-    "productImage": "https://image.hm.com/assets/hm/46/6d/466d8f5a8c0927938e9ca1d994aee7ffad51a63f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/46/6d/466d8f5a8c0927938e9ca1d994aee7ffad51a63f.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1288933001",
@@ -4545,7 +5219,10 @@
       "Style:": "Cargo",
       "Description:": "Dark khaki green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d8/0f/d80f9bcd8183d52f406ea942fc40aadca3b32330.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d8/0f/d80f9bcd8183d52f406ea942fc40aadca3b32330.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1283794001",
@@ -4566,7 +5243,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Lightweight Packable Sealed seams"
     },
-    "productImage": "https://image.hm.com/assets/hm/2c/53/2c5376c86878e11250d3e4e5d1533aa8a209c0a5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2c/53/2c5376c86878e11250d3e4e5d1533aa8a209c0a5.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1294301001",
@@ -4585,7 +5265,10 @@
       "Description:": "Dark denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/c2/f8/c2f847228a423c7988c998a7b3cb2b1a90b11a0e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c2/f8/c2f847228a423c7988c998a7b3cb2b1a90b11a0e.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1209691007",
@@ -4605,7 +5288,10 @@
       "Description:": "Greige, Solid colour",
       "Concept:": "MODERN CLASSIC"
     },
-    "productImage": "https://image.hm.com/assets/hm/c7/d5/c7d5befc8978185507da255cca24a4ad6fbe8728.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c7/d5/c7d5befc8978185507da255cca24a4ad6fbe8728.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1301133002",
@@ -4624,7 +5310,10 @@
       "Style:": "Car coat Single-breasted",
       "Description:": "Black marl/Dark brown, Block-coloured"
     },
-    "productImage": "https://image.hm.com/assets/hm/12/e1/12e13eb0530a659418c942f2ddab8a466f7a9b82.jpg"
+    "productImage": "https://image.hm.com/assets/hm/12/e1/12e13eb0530a659418c942f2ddab8a466f7a9b82.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1259401006",
@@ -4643,7 +5332,10 @@
       "Description:": "Navy blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/3f/ad/3fadb98865c27f606e62bc8df583f8b33a249c58.jpg"
+    "productImage": "https://image.hm.com/assets/hm/3f/ad/3fadb98865c27f606e62bc8df583f8b33a249c58.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1253652001",
@@ -4663,7 +5355,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "H&M Move"
     },
-    "productImage": "https://image.hm.com/assets/hm/68/fd/68fd7b64bbff164c5785be21d313b0731649d7b7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/68/fd/68fd7b64bbff164c5785be21d313b0731649d7b7.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1228998003",
@@ -4684,7 +5379,10 @@
       "Description:": "Light beige, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/79/f3/79f31e8ec6cac5cf18f1d88daf1a6234a8a91e7d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/79/f3/79f31e8ec6cac5cf18f1d88daf1a6234a8a91e7d.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1259454001",
@@ -4704,7 +5402,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/8f/ea/8fea8c5c24e6653762616b1e571bda4ab8791c9a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/8f/ea/8fea8c5c24e6653762616b1e571bda4ab8791c9a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "0935727024",
@@ -4723,7 +5424,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "MODERN CLASSIC"
     },
-    "productImage": "https://image.hm.com/assets/hm/6b/43/6b4389262e283d4264448f09632c84e1928a6dc4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6b/43/6b4389262e283d4264448f09632c84e1928a6dc4.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1292098001",
@@ -4740,7 +5444,12 @@
       "Style:": "Hooded jacket",
       "Description:": "Dark Grey Melange"
     },
-    "productImage": "https://image.hm.com/assets/003/8a/23/8a23c050d226cd1f4bd75601b35bb27622603828.jpg"
+    "productImage": "https://image.hm.com/assets/003/8a/23/8a23c050d226cd1f4bd75601b35bb27622603828.jpg",
+    "roles": [
+      "base",
+      "mid-layer",
+      "outer"
+    ]
   },
   {
     "item_id": "1294309001",
@@ -4761,7 +5470,10 @@
       "Description:": "Red/White, Block-coloured",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/a1/d8/a1d878fcf6f58af013b6cc8c3febc980f57f12b4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a1/d8/a1d878fcf6f58af013b6cc8c3febc980f57f12b4.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1294215003",
@@ -4782,7 +5494,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Sealed seams"
     },
-    "productImage": "https://image.hm.com/assets/hm/1d/9c/1d9c1705725952b3fe309be1c864ab847ae72e0a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/1d/9c/1d9c1705725952b3fe309be1c864ab847ae72e0a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1269225001",
@@ -4799,7 +5514,10 @@
       "Style:": "Windbreaker",
       "Description:": "Dark Grey, Solid colour, Dark Grey"
     },
-    "productImage": "https://image.hm.com/assets/002/57/dc/57dc60817363fcfdf55e86f5d57e5d54805a09e5.jpg"
+    "productImage": "https://image.hm.com/assets/002/57/dc/57dc60817363fcfdf55e86f5d57e5d54805a09e5.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1283793002",
@@ -4821,7 +5539,8 @@
       "Concept:": "H&M Move",
       "Nice to know:": "Sealed seams"
     },
-    "productImage": "https://image.hm.com/assets/hm/8a/6c/8a6c1d4d2888f912709114a2efe6ffb0ff19fa36.jpg"
+    "productImage": "https://image.hm.com/assets/hm/8a/6c/8a6c1d4d2888f912709114a2efe6ffb0ff19fa36.jpg",
+    "roles": []
   },
   {
     "item_id": "1308173001",
@@ -4842,7 +5561,10 @@
       "Description:": "Beige/Brown/Black, Checked",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/ab/e6/abe66fdcdd6e55f7a468a8d0144fa861b1623213.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ab/e6/abe66fdcdd6e55f7a468a8d0144fa861b1623213.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1300482001",
@@ -4861,7 +5583,10 @@
       "Description:": "Dark brown/Grey marl, Block-coloured",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/25/5b/255b03d947193ba488a54e2c9bd1462431ccc811.jpg"
+    "productImage": "https://image.hm.com/assets/hm/25/5b/255b03d947193ba488a54e2c9bd1462431ccc811.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1289061001",
@@ -4879,7 +5604,10 @@
       "Style:": "Pea coat",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/005/47/40/4740d6ecd8ede84aa1c83948ee4fd83cbd5fe81c.jpg"
+    "productImage": "https://image.hm.com/assets/005/47/40/4740d6ecd8ede84aa1c83948ee4fd83cbd5fe81c.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1293752001",
@@ -4897,7 +5625,10 @@
       "Description:": "Solid colour",
       "Nice to know:": "Wool"
     },
-    "productImage": "https://image.hm.com/assets/001/bc/28/bc280ad7b274f4432b231313f2b4863d78c90d1c.jpg"
+    "productImage": "https://image.hm.com/assets/001/bc/28/bc280ad7b274f4432b231313f2b4863d78c90d1c.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1294893001",
@@ -4916,7 +5647,10 @@
       "Description:": "Solid colour",
       "Nice to know:": "Wool"
     },
-    "productImage": "https://image.hm.com/assets/001/44/52/4452edbd64395ad3f5d24ec2e04ee63bc9ab1afb.jpg"
+    "productImage": "https://image.hm.com/assets/001/44/52/4452edbd64395ad3f5d24ec2e04ee63bc9ab1afb.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1304962001",
@@ -4934,7 +5668,10 @@
       "Neckline:": "Round neck",
       "Description:": "Dusty blue/Dark blue/White, Patterned"
     },
-    "productImage": "https://image.hm.com/assets/hm/a5/20/a5209932ca702daa5bea2e66bdbb1fd914e558b7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a5/20/a5209932ca702daa5bea2e66bdbb1fd914e558b7.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1261593002",
@@ -4954,7 +5691,10 @@
       "Neckline:": "Round neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/03/4b/034b04b5fd618767a7ce53bc3440db8dd97f832a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/03/4b/034b04b5fd618767a7ce53bc3440db8dd97f832a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1261868002",
@@ -4973,7 +5713,10 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/48/f3/48f355b988f8b75825542ed4fd9a803057197b0a.jpg"
+    "productImage": "https://image.hm.com/assets/001/48/f3/48f355b988f8b75825542ed4fd9a803057197b0a.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1209691006",
@@ -4993,7 +5736,10 @@
       "Description:": "Dark grey-green, Solid colour",
       "Concept:": "MODERN CLASSIC"
     },
-    "productImage": "https://image.hm.com/assets/hm/15/8c/158c2e08c9e368a8dd36e6968e214e129e5d9fcd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/15/8c/158c2e08c9e368a8dd36e6968e214e129e5d9fcd.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1285448001",
@@ -5011,7 +5757,10 @@
       "Collar:": "Shawl lapels",
       "Description:": "Black/Blue, Checked"
     },
-    "productImage": "https://image.hm.com/assets/005/59/8f/598fdec8d2da7bdb4d4d5d84c77e0dfca2b9e117.jpg"
+    "productImage": "https://image.hm.com/assets/005/59/8f/598fdec8d2da7bdb4d4d5d84c77e0dfca2b9e117.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1293054002",
@@ -5030,7 +5779,10 @@
       "Neckline:": "V-neck",
       "Description:": "White/Black"
     },
-    "productImage": "https://image.hm.com/assets/hm/2a/ec/2aecfabf6641732f78bbcc8b32fa5c8062d4543c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2a/ec/2aecfabf6641732f78bbcc8b32fa5c8062d4543c.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1293346001",
@@ -5048,7 +5800,10 @@
       "Collar:": "Turn-down collar",
       "Description:": "Dark Brown, Solid colour, Dark Brown"
     },
-    "productImage": "https://image.hm.com/assets/003/ab/e2/abe21b9b3b461892b93e32ae7cdd1a7206910163.jpg"
+    "productImage": "https://image.hm.com/assets/003/ab/e2/abe21b9b3b461892b93e32ae7cdd1a7206910163.jpg",
+    "roles": [
+      "outer"
+    ]
   },
   {
     "item_id": "1300818001",
@@ -5066,7 +5821,10 @@
       "Fit:": "Slim fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/a5/23/a52328a0e32ceef855aaa487a74f4c0034f8c85f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/a5/23/a52328a0e32ceef855aaa487a74f4c0034f8c85f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1303105005",
@@ -5085,7 +5843,10 @@
       "Style:": "A-line Skater",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/95/90/95900a621468f41dfb78726cf37dbe774d4f6179.jpg"
+    "productImage": "https://image.hm.com/assets/hm/95/90/95900a621468f41dfb78726cf37dbe774d4f6179.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1301009001",
@@ -5102,7 +5863,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/15/57/1557b3a114490aba887f85027d74b458b3ba516f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/15/57/1557b3a114490aba887f85027d74b458b3ba516f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1246922022",
@@ -5120,7 +5884,10 @@
       "Fit:": "Slim fit",
       "Description:": "Light beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/51/cb/51cb1df5adac111656efc82a192cc827008d3e3e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/51/cb/51cb1df5adac111656efc82a192cc827008d3e3e.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1290883004",
@@ -5139,7 +5906,10 @@
       "Style:": "A-line Circular",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/46/f7/46f748eb00b51969ca489fa0625c189375b3286f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/46/f7/46f748eb00b51969ca489fa0625c189375b3286f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1310906001",
@@ -5157,7 +5927,10 @@
       "Style:": "Flared",
       "Description:": "Orange/Light pink/Light yellow/Purple/Light blue-grey, Paisley-patterned"
     },
-    "productImage": "https://image.hm.com/assets/hm/97/7f/977fcba416ceed83ef0edd91462448d5976cc30f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/97/7f/977fcba416ceed83ef0edd91462448d5976cc30f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288135001",
@@ -5175,7 +5948,10 @@
       "Fit:": "Regular fit",
       "Description:": "Cream/Black, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/40/e2/40e2714be9ed67405f1e35e3c48f3e5d7b87a323.jpg"
+    "productImage": "https://image.hm.com/assets/hm/40/e2/40e2714be9ed67405f1e35e3c48f3e5d7b87a323.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295770002",
@@ -5193,7 +5969,10 @@
       "Style:": "Wrapover",
       "Description:": "Beige/Black, Leopard-print"
     },
-    "productImage": "https://image.hm.com/assets/hm/ae/91/ae9111fa16e4d68bb8a239278f94d37609d7c045.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ae/91/ae9111fa16e4d68bb8a239278f94d37609d7c045.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288135004",
@@ -5210,7 +5989,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/28/8f/288f023c31720078a734a0b6a3966c1c0ad4dbf5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/28/8f/288f023c31720078a734a0b6a3966c1c0ad4dbf5.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292331001",
@@ -5227,7 +6009,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black/White, Block-coloured"
     },
-    "productImage": "https://image.hm.com/assets/hm/36/9e/369ef533f968eebe9490a0f59cf364ffeee77298.jpg"
+    "productImage": "https://image.hm.com/assets/hm/36/9e/369ef533f968eebe9490a0f59cf364ffeee77298.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295156001",
@@ -5245,7 +6030,10 @@
       "Style:": "Pencil skirt Slit",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/42/9a/429a893cdc894f21996a154a2a86beb12d0f4cc9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/42/9a/429a893cdc894f21996a154a2a86beb12d0f4cc9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1290172001",
@@ -5263,7 +6051,10 @@
       "Style:": "A-line",
       "Description:": "Denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/44/38/44388eb45ee4b4427d606a847eb8243ff292ec17.jpg"
+    "productImage": "https://image.hm.com/assets/hm/44/38/44388eb45ee4b4427d606a847eb8243ff292ec17.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1302548001",
@@ -5283,7 +6074,11 @@
       "Description:": "Dark plum, Solid colour",
       "Concept:": "H&M EDITION"
     },
-    "productImage": "https://image.hm.com/assets/hm/6f/85/6f853a1f9214919978f34f0c02affd2770ffeee7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/6f/85/6f853a1f9214919978f34f0c02affd2770ffeee7.jpg",
+    "roles": [
+      "outer",
+      "bottom"
+    ]
   },
   {
     "item_id": "1272891004",
@@ -5302,7 +6097,10 @@
       "Style:": "Pencil skirt Slit",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d4/ad/d4ad9bd77b73c009dcb9ac7b78ca3a3e635475c1.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d4/ad/d4ad9bd77b73c009dcb9ac7b78ca3a3e635475c1.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1255322001",
@@ -5323,7 +6121,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "With pocket"
     },
-    "productImage": "https://image.hm.com/assets/hm/cf/cd/cfcd7d7c46c5ffdca5cef001af235b78faeea301.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cf/cd/cfcd7d7c46c5ffdca5cef001af235b78faeea301.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1230323002",
@@ -5341,7 +6142,10 @@
       "Style:": "Wrapover",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/15/89/158925ac0a4b5f6a66b2f38b03fa25b31d1c272a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/15/89/158925ac0a4b5f6a66b2f38b03fa25b31d1c272a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1294231001",
@@ -5358,7 +6162,10 @@
       "Fit:": "Loose fit",
       "Description:": "White, Solid colour, White"
     },
-    "productImage": "https://image.hm.com/assets/002/0d/b1/0db1d45d97dfba97d21833766b8e08f4bae0d37a.jpg"
+    "productImage": "https://image.hm.com/assets/002/0d/b1/0db1d45d97dfba97d21833766b8e08f4bae0d37a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1295117001",
@@ -5376,7 +6183,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/10/44/1044641384375fcda4e8ed82dd26086633210d26.jpg"
+    "productImage": "https://image.hm.com/assets/hm/10/44/1044641384375fcda4e8ed82dd26086633210d26.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1271648001",
@@ -5395,7 +6205,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/91/74/917493e25e69e5e28f4fed1521d97b6f7ef7359c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/91/74/917493e25e69e5e28f4fed1521d97b6f7ef7359c.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1300393001",
@@ -5413,7 +6226,10 @@
       "Style:": "Pencil skirt Slit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/21/ff/21ffd386099a537fe39a9b48996fbba169267864.jpg"
+    "productImage": "https://image.hm.com/assets/hm/21/ff/21ffd386099a537fe39a9b48996fbba169267864.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1300646001",
@@ -5431,7 +6247,10 @@
       "Fit:": "Loose fit",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/94/66/94660d8980c10230ff69fb2b8e1d3b9fddf3e525.jpg"
+    "productImage": "https://image.hm.com/assets/hm/94/66/94660d8980c10230ff69fb2b8e1d3b9fddf3e525.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1300707001",
@@ -5449,7 +6268,10 @@
       "Style:": "Pencil skirt",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/7d/cd/7dcd5b1730426abdb03e518e7cd74144da5f61de.jpg"
+    "productImage": "https://image.hm.com/assets/hm/7d/cd/7dcd5b1730426abdb03e518e7cd74144da5f61de.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1289528003",
@@ -5471,7 +6293,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "With pocket"
     },
-    "productImage": "https://image.hm.com/assets/hm/e5/75/e575eb00aea8e7a27b4058b294346b5422c9337a.jpg"
+    "productImage": "https://image.hm.com/assets/hm/e5/75/e575eb00aea8e7a27b4058b294346b5422c9337a.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1301116001",
@@ -5490,7 +6315,10 @@
       "Style:": "Flared",
       "Description:": "Dark brown/Beige, Checked"
     },
-    "productImage": "https://image.hm.com/assets/hm/ab/16/ab16d3e809d603259982d9784717eb3a656f7c06.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ab/16/ab16d3e809d603259982d9784717eb3a656f7c06.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1288135002",
@@ -5507,7 +6335,10 @@
       "Fit:": "Regular fit",
       "Description:": "Beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/44/47/4447d8925bb00d1f9cf80bcd97f43d5c4ba3977b.jpg"
+    "productImage": "https://image.hm.com/assets/hm/44/47/4447d8925bb00d1f9cf80bcd97f43d5c4ba3977b.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1270456001",
@@ -5525,7 +6356,10 @@
       "Style:": "A-line Skater",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/b1/ed/b1ed5e51ebe839f05563f8c6436da191b8d4ad8d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b1/ed/b1ed5e51ebe839f05563f8c6436da191b8d4ad8d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1296510001",
@@ -5544,7 +6378,10 @@
       "Description:": "Dark denim grey/White/Beige/Pink, Flowers",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/9e/73/9e73b4db6f547f8d67d81b6d0e74969b04a5a7fb.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9e/73/9e73b4db6f547f8d67d81b6d0e74969b04a5a7fb.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1290639001",
@@ -5562,7 +6399,10 @@
       "Description:": "Brown, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/0c/bc/0cbcf42c0aeaa06e3397499c897c90631bc4d9c1.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0c/bc/0cbcf42c0aeaa06e3397499c897c90631bc4d9c1.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1247890008",
@@ -5579,7 +6419,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black/White, Checked"
     },
-    "productImage": "https://image.hm.com/assets/hm/08/89/0889f9e0d034bf4966088b169f695b82bb1793ec.jpg"
+    "productImage": "https://image.hm.com/assets/hm/08/89/0889f9e0d034bf4966088b169f695b82bb1793ec.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1247995004",
@@ -5597,7 +6440,10 @@
       "Style:": "Slit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/9e/9d/9e9d2037271728752e47ab9c6253720a79d9e448.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9e/9d/9e9d2037271728752e47ab9c6253720a79d9e448.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1307045001",
@@ -5614,7 +6460,10 @@
       "Style:": "Pencil skirt Slit",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/2d/8a/2d8adc860b77efd78e9c007be00750cb54146e90.jpg"
+    "productImage": "https://image.hm.com/assets/hm/2d/8a/2d8adc860b77efd78e9c007be00750cb54146e90.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1310152001",
@@ -5631,7 +6480,10 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/3c/88/3c88200cb97fa4791f491917488be27a7baa7b61.jpg"
+    "productImage": "https://image.hm.com/assets/001/3c/88/3c88200cb97fa4791f491917488be27a7baa7b61.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1303105003",
@@ -5650,7 +6502,10 @@
       "Style:": "A-line Skater",
       "Description:": "Brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d4/c4/d4c4999bbf9261ce9f5400ce3df4ceb3ec8c089e.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d4/c4/d4c4999bbf9261ce9f5400ce3df4ceb3ec8c089e.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1247995001",
@@ -5668,7 +6523,10 @@
       "Style:": "Slit",
       "Description:": "Dark denim blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/69/e8/69e84aae8fd294e8861e72989e6c7f2c4e7fcbc6.jpg"
+    "productImage": "https://image.hm.com/assets/hm/69/e8/69e84aae8fd294e8861e72989e6c7f2c4e7fcbc6.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1265873001",
@@ -5686,7 +6544,10 @@
       "Style:": "A-line",
       "Description:": "Navy blue, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/8e/43/8e43ae48eb881b7159c0514ecaf604adcdbd5dbd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/8e/43/8e43ae48eb881b7159c0514ecaf604adcdbd5dbd.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1255322004",
@@ -5708,7 +6569,10 @@
       "Concept:": "H&M Move",
       "Nice to know:": "With pocket"
     },
-    "productImage": "https://image.hm.com/assets/hm/fd/12/fd129f50fcc8a5072df77ecd41982002112dae52.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fd/12/fd129f50fcc8a5072df77ecd41982002112dae52.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1296491001",
@@ -5726,7 +6590,10 @@
       "Description:": "Light khaki green/Light beige/Grey, Checked",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/48/4a/484ad329a71984bc4aac1b4e442ea607ec74b557.jpg"
+    "productImage": "https://image.hm.com/assets/hm/48/4a/484ad329a71984bc4aac1b4e442ea607ec74b557.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1296093006",
@@ -5745,7 +6612,10 @@
       "Description:": "Denim blue, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/4c/f5/4cf5e104a3b32feaae6a5c373f81a70751bb80d9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4c/f5/4cf5e104a3b32feaae6a5c373f81a70751bb80d9.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1305164001",
@@ -5764,7 +6634,10 @@
       "Style:": "Pencil skirt Slit",
       "Description:": "Dark grey, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/9e/86/9e867b4e0c900287cf56a77026b6ce790b4d8f42.jpg"
+    "productImage": "https://image.hm.com/assets/hm/9e/86/9e867b4e0c900287cf56a77026b6ce790b4d8f42.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1299197001",
@@ -5782,7 +6655,10 @@
       "Style:": "Tube skirt",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/47/4f/474fefd796a281dd1fb4757179a727812a9bc309.jpg"
+    "productImage": "https://image.hm.com/assets/hm/47/4f/474fefd796a281dd1fb4757179a727812a9bc309.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292206001",
@@ -5801,7 +6677,11 @@
       "Style:": "Wrapover",
       "Description:": "Dark brown, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/82/ea/82ea08080a8b68bc66d2d508fc8b9eda967d68bc.jpg"
+    "productImage": "https://image.hm.com/assets/hm/82/ea/82ea08080a8b68bc66d2d508fc8b9eda967d68bc.jpg",
+    "roles": [
+      "outer",
+      "bottom"
+    ]
   },
   {
     "item_id": "1250051003",
@@ -5819,7 +6699,10 @@
       "Style:": "A-line",
       "Description:": "Light beige, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/4b/05/4b05280fca7b14648e54f7af6fb14fdb907c32ce.jpg"
+    "productImage": "https://image.hm.com/assets/hm/4b/05/4b05280fca7b14648e54f7af6fb14fdb907c32ce.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1274562002",
@@ -5836,7 +6719,10 @@
       "Fit:": "Regular fit",
       "Description:": "Black, Solid colour, Black pleated mini skirt"
     },
-    "productImage": "https://image.hm.com/assets/003/4b/c8/4bc8b5ad018c3c22158b6fd4f2300c096405d1f4.jpg"
+    "productImage": "https://image.hm.com/assets/003/4b/c8/4bc8b5ad018c3c22158b6fd4f2300c096405d1f4.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292331002",
@@ -5854,7 +6740,10 @@
       "Fit:": "Regular fit",
       "Description:": "Cream, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/36/d9/36d963d056e3e101151b24d3ea6e2a5600756df4.jpg"
+    "productImage": "https://image.hm.com/assets/hm/36/d9/36d963d056e3e101151b24d3ea6e2a5600756df4.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1184662024",
@@ -5873,7 +6762,10 @@
       "Style:": "Flared",
       "Description:": "Red, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ce/a8/cea8336ab03ebddd072d9cebbc2773a617bfcf5d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ce/a8/cea8336ab03ebddd072d9cebbc2773a617bfcf5d.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1292675001",
@@ -5891,7 +6783,8 @@
       "Description:": "Black, Solid colour",
       "Concept:": "BASICS DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/54/52/545222d76b1433151a3de527cfba2acae05d68bd.jpg"
+    "productImage": "https://image.hm.com/assets/hm/54/52/545222d76b1433151a3de527cfba2acae05d68bd.jpg",
+    "roles": []
   },
   {
     "item_id": "1246532003",
@@ -5909,7 +6802,8 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/88/cd/88cdf9dc0de3e3ac02bfd7c543a0cb05c1cbbea4.jpg"
+    "productImage": "https://image.hm.com/assets/001/88/cd/88cdf9dc0de3e3ac02bfd7c543a0cb05c1cbbea4.jpg",
+    "roles": []
   },
   {
     "item_id": "1273054002",
@@ -5928,7 +6822,10 @@
       "Description:": "Light denim blue, Solid colour",
       "Concept:": "DENIM"
     },
-    "productImage": "https://image.hm.com/assets/hm/cf/02/cf02e564826fff77f8bcd533b3018a10462e381f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/cf/02/cf02e564826fff77f8bcd533b3018a10462e381f.jpg",
+    "roles": [
+      "bottom"
+    ]
   },
   {
     "item_id": "1308588001",
@@ -5946,7 +6843,8 @@
       "Description:": "Light beige/Pink/Green/Purple/Yellow, Floral",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/68/47/68477cf7ec95627a277ea4d07e39de1921906d3b.jpg"
+    "productImage": "https://image.hm.com/assets/hm/68/47/68477cf7ec95627a277ea4d07e39de1921906d3b.jpg",
+    "roles": []
   },
   {
     "item_id": "1262488002",
@@ -5965,7 +6863,8 @@
       "Neckline:": "Asymmetric neckline",
       "Description:": "Red, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/c3/01/c3015a0b4085edf92e9ceaa53c7992f91e340dd5.jpg"
+    "productImage": "https://image.hm.com/assets/hm/c3/01/c3015a0b4085edf92e9ceaa53c7992f91e340dd5.jpg",
+    "roles": []
   },
   {
     "item_id": "1276781001",
@@ -5983,7 +6882,8 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/75/5c/755c6bdafe5c7a797ab42e9e2e1669c1f979067b.jpg"
+    "productImage": "https://image.hm.com/assets/001/75/5c/755c6bdafe5c7a797ab42e9e2e1669c1f979067b.jpg",
+    "roles": []
   },
   {
     "item_id": "1232338004",
@@ -6001,7 +6901,8 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton Linen"
     },
-    "productImage": "https://image.hm.com/assets/001/77/6e/776e960ada5c20231c75a613efbee0d34f8e4955.jpg"
+    "productImage": "https://image.hm.com/assets/001/77/6e/776e960ada5c20231c75a613efbee0d34f8e4955.jpg",
+    "roles": []
   },
   {
     "item_id": "1247815002",
@@ -6019,7 +6920,8 @@
       "Description:": "Solid colour",
       "Nice to know:": "Cotton"
     },
-    "productImage": "https://image.hm.com/assets/001/33/dc/33dc49eb0ad812309e2b3c76df16fa62e2872e44.jpg"
+    "productImage": "https://image.hm.com/assets/001/33/dc/33dc49eb0ad812309e2b3c76df16fa62e2872e44.jpg",
+    "roles": []
   },
   {
     "item_id": "1283355001",
@@ -6037,7 +6939,8 @@
       "Description:": "Solid colour",
       "Nice to know:": "Leather"
     },
-    "productImage": "https://image.hm.com/assets/001/d1/f2/d1f25965f992da6957623982ee9f8a661c305e3b.jpg"
+    "productImage": "https://image.hm.com/assets/001/d1/f2/d1f25965f992da6957623982ee9f8a661c305e3b.jpg",
+    "roles": []
   },
   {
     "item_id": "1276763001",
@@ -6055,7 +6958,8 @@
       "Neckline:": "Round neck",
       "Description:": "Light Green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/005/ab/29/ab290c00ad4ceae38c512446f786c488360cbf71.jpg"
+    "productImage": "https://image.hm.com/assets/005/ab/29/ab290c00ad4ceae38c512446f786c488360cbf71.jpg",
+    "roles": []
   },
   {
     "item_id": "1284182001",
@@ -6072,7 +6976,8 @@
       "Fit:": "Loose fit",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/006/2b/45/2b45062c1cb24ff6b0bd36f7565b62e88479055c.jpg"
+    "productImage": "https://image.hm.com/assets/006/2b/45/2b45062c1cb24ff6b0bd36f7565b62e88479055c.jpg",
+    "roles": []
   },
   {
     "item_id": "1271903002",
@@ -6089,7 +6994,8 @@
       "Collar:": "Turn-down collar",
       "Description:": "Ecru, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/005/06/a4/06a419f03777146cc87b6973f94ecf367cb8b895.jpg"
+    "productImage": "https://image.hm.com/assets/005/06/a4/06a419f03777146cc87b6973f94ecf367cb8b895.jpg",
+    "roles": []
   },
   {
     "item_id": "1295724002",
@@ -6107,7 +7013,8 @@
       "Description:": "Light blue/White, Striped",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/b0/ee/b0eef6d5eda07f6596fa5f00e15ecb8b204cac5f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/b0/ee/b0eef6d5eda07f6596fa5f00e15ecb8b204cac5f.jpg",
+    "roles": []
   },
   {
     "item_id": "1281664001",
@@ -6125,7 +7032,8 @@
       "Neckline:": "V-neck",
       "Description:": "White, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/005/d2/ca/d2caf5bcb5b3b47f9c0f536a543df82c8c55a610.jpg"
+    "productImage": "https://image.hm.com/assets/005/d2/ca/d2caf5bcb5b3b47f9c0f536a543df82c8c55a610.jpg",
+    "roles": []
   },
   {
     "item_id": "1242877022",
@@ -6146,7 +7054,10 @@
       "Concept:": "H&M EDITION",
       "Nice to know:": "H&M Premium Selection"
     },
-    "productImage": "https://image.hm.com/assets/hm/f2/a2/f2a279d65e6ad799ad3e0e55e3d2bf2f858718a7.jpg"
+    "productImage": "https://image.hm.com/assets/hm/f2/a2/f2a279d65e6ad799ad3e0e55e3d2bf2f858718a7.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1297859001",
@@ -6166,7 +7077,10 @@
       "Description:": "Navy blue/Red/White",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/88/e9/88e938f358193c557b327039993fe0f3938aac0d.jpg"
+    "productImage": "https://image.hm.com/assets/hm/88/e9/88e938f358193c557b327039993fe0f3938aac0d.jpg",
+    "roles": [
+      "base"
+    ]
   },
   {
     "item_id": "1248631010",
@@ -6183,7 +7097,10 @@
       "Neckline:": "Round neck",
       "Description:": "Black, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/73/ce/73ce3a9c98353775c2386c7aa0bdf61c082c36f9.jpg"
+    "productImage": "https://image.hm.com/assets/hm/73/ce/73ce3a9c98353775c2386c7aa0bdf61c082c36f9.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1226693011",
@@ -6200,7 +7117,11 @@
       "Neckline:": "Round neck",
       "Description:": "Powder pink, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/d4/e3/d4e3759f9aaaca42b9bf74da6acdb44d4d05f125.jpg"
+    "productImage": "https://image.hm.com/assets/hm/d4/e3/d4e3759f9aaaca42b9bf74da6acdb44d4d05f125.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1302636001",
@@ -6218,7 +7139,11 @@
       "Description:": "White, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/0d/e4/0de48ba70f8254d90bd02ce06af07b2fb4924c70.jpg"
+    "productImage": "https://image.hm.com/assets/hm/0d/e4/0de48ba70f8254d90bd02ce06af07b2fb4924c70.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1089158025",
@@ -6235,7 +7160,11 @@
       "Neckline:": "V-neck",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/41/f8/41f807eed5e6238b03eee845f0c3717e4f1b0e94.jpg"
+    "productImage": "https://image.hm.com/assets/hm/41/f8/41f807eed5e6238b03eee845f0c3717e4f1b0e94.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1260797009",
@@ -6253,7 +7182,11 @@
       "Neckline:": "Round neck",
       "Description:": "Grey marl, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/89/e4/89e484d15d924d157e1dbed9c51809f3244e687c.jpg"
+    "productImage": "https://image.hm.com/assets/hm/89/e4/89e484d15d924d157e1dbed9c51809f3244e687c.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1093199015",
@@ -6272,7 +7205,11 @@
       "Neckline:": "Polo-neck",
       "Description:": "Black/Light beige, Striped"
     },
-    "productImage": "https://image.hm.com/assets/hm/71/7e/717eb1bd0b5d61ae3e331fea6187ba8c174b947f.jpg"
+    "productImage": "https://image.hm.com/assets/hm/71/7e/717eb1bd0b5d61ae3e331fea6187ba8c174b947f.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1226693008",
@@ -6290,7 +7227,11 @@
       "Neckline:": "Round neck",
       "Description:": "Light grey-green, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/fa/f9/faf961965b6ff4a06022120c352a82fe2b48e739.jpg"
+    "productImage": "https://image.hm.com/assets/hm/fa/f9/faf961965b6ff4a06022120c352a82fe2b48e739.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1239431014",
@@ -6308,7 +7249,10 @@
       "Neckline:": "Round neck",
       "Description:": "Burgundy, Solid colour"
     },
-    "productImage": "https://image.hm.com/assets/hm/ff/be/ffbe194992e40a9894e8ceab71e838a4dd77b840.jpg"
+    "productImage": "https://image.hm.com/assets/hm/ff/be/ffbe194992e40a9894e8ceab71e838a4dd77b840.jpg",
+    "roles": [
+      "mid-layer"
+    ]
   },
   {
     "item_id": "1237605001",
@@ -6327,6 +7271,10 @@
       "Description:": "Black, Solid colour",
       "Concept:": "DIVIDED"
     },
-    "productImage": "https://image.hm.com/assets/hm/bb/89/bb8923a1704bdb23a131ace3a3f311c125b3b7ee.jpg"
+    "productImage": "https://image.hm.com/assets/hm/bb/89/bb8923a1704bdb23a131ace3a3f311c125b3b7ee.jpg",
+    "roles": [
+      "base",
+      "mid-layer"
+    ]
   }
 ]

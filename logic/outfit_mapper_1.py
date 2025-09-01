@@ -21,6 +21,182 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple, Any
 import pandas as pd
 
+# ==== Aesthetic scorer hook ==============================================
+import os, pickle
+import numpy as np
+import itertools
+
+
+class AestheticScorer:
+    """
+    Tries to load a trained model from ML/aesthetic_scorer_v1.pkl.
+    Falls back to a lightweight heuristic if model or features are missing.
+    Expects items to optionally carry:
+      - item.get("style_vec") -> np.ndarray or list
+      - item.get("color_vec") -> np.ndarray or list
+    Feature vector for (top, bottom, outer?) is concatenation of:
+      [top.style, bottom.style, outer.style?,
+       top.color, bottom.color, outer.color?,
+       [pairwise sims], [clo features]]
+    """
+
+    def __init__(self, model_path="ML/aesthetic_scorer_v1.pkl"):
+        self.model = None
+        self.model_path = model_path
+        if os.path.exists(model_path):
+            try:
+                with open(model_path, "rb") as f:
+                    self.model = pickle.load(f)
+            except Exception as e:
+                print(f"[warn] Could not load aesthetic model: {e}")
+
+    @staticmethod
+    def _to_vec(x):
+        if x is None:
+            return None
+        arr = np.asarray(x, dtype=float)
+        return arr if arr.ndim == 1 else arr.ravel()
+
+    @staticmethod
+    def _sim(a, b):
+        if a is None or b is None:
+            return 0.0
+        na = np.linalg.norm(a)
+        nb = np.linalg.norm(b)
+        if na == 0 or nb == 0:
+            return 0.0
+        return float(np.dot(a, b) / (na * nb))
+
+    def _build_features(self, top, bottom, outer, clo_top, clo_bottom, clo_outer):
+        # grab vectors
+        sv_t = self._to_vec(top.get("style_vec"))
+        sv_b = self._to_vec(bottom.get("style_vec"))
+        sv_o = self._to_vec(outer.get("style_vec")) if outer else None
+
+        cv_t = self._to_vec(top.get("color_vec"))
+        cv_b = self._to_vec(bottom.get("color_vec"))
+        cv_o = self._to_vec(outer.get("color_vec")) if outer else None
+
+        # sims
+        style_tb = self._sim(sv_t, sv_b)
+        style_to = self._sim(sv_t, sv_o) if outer else 0.0
+        style_bo = self._sim(sv_b, sv_o) if outer else 0.0
+
+        color_tb = self._sim(cv_t, cv_b)
+        color_to = self._sim(cv_t, cv_o) if outer else 0.0
+        color_bo = self._sim(cv_b, cv_o) if outer else 0.0
+
+        # concatenation (pad missing with zeros so dimension is fixed)
+        def pad(v, d=64):
+            if v is None:
+                return np.zeros(d, dtype=float)
+            return v
+
+        d_style = max([len(v) for v in [sv_t, sv_b, sv_o] if v is not None] + [0]) or 1
+        d_color = max([len(v) for v in [cv_t, cv_b, cv_o] if v is not None] + [0]) or 1
+
+        feats = np.concatenate([
+            pad(sv_t, d_style), pad(sv_b, d_style), pad(sv_o, d_style),
+            pad(cv_t, d_color), pad(cv_b, d_color), pad(cv_o, d_color),
+            np.array([
+                style_tb, style_to, style_bo,
+                color_tb, color_to, color_bo,
+                clo_top, clo_bottom, (clo_outer or 0.0)
+            ], dtype=float)
+        ], axis=0)
+        return feats
+
+    def score(self, top, bottom, outer, clo_top, clo_bottom, clo_outer):
+        if self.model is not None:
+            X = self._build_features(top, bottom, outer, clo_top, clo_bottom, clo_outer).reshape(1, -1)
+            try:
+                y = self.model.predict(X)
+                return float(y[0])
+            except Exception as e:
+                print(f"[warn] Model.predict failed; using heuristic. err={e}")
+
+        # Heuristic fallback
+        def get(it, key):
+            return (it or {}).get(key, "")
+
+        t_type = get(top, "type").lower()
+        b_type = get(bottom, "type").lower()
+        o_type = get(outer, "type").lower() if outer else ""
+
+        base_bonus = 0.0
+        if any(k in t_type for k in ["tee", "t-shirt", "vest", "camisole", "blouse"]):
+            base_bonus += 0.1
+        if any(k in b_type for k in ["short", "jean", "trouser", "skirt"]):
+            base_bonus += 0.1
+        if outer and any(k in o_type for k in ["jacket", "coat", "blazer"]):
+            base_bonus += 0.1
+
+        # color harmony heuristic
+        neutrals = ["black", "white", "beige", "cream", "grey", "navy", "charcoal"]
+        col_t = get(top, "color").lower()
+        col_b = get(bottom, "color").lower()
+        col_o = get(outer, "color").lower() if outer else ""
+        neutral_frac = sum(any(n in c for n in neutrals) for c in [col_t, col_b, col_o if outer else ""]) / (3 if outer else 2)
+        harmony = 0.4 + 0.4 * neutral_frac
+
+        # clo balance
+        clo_tot = (clo_top or 0) + (clo_bottom or 0) + (clo_outer or 0)
+        clo_top_ratio = (clo_top or 0) / (clo_tot + 1e-6)
+        clo_balance = 0.4 if clo_top_ratio > 0.75 else 0.6
+
+        return float(5.0 * harmony + 2.0 * base_bonus + 1.0 * clo_balance)
+# ========================================================================
+
+# ---- Aesthetic scorer singleton and wrapper ---------------------------
+
+_AESTHETIC_SCORER_SINGLETON: Optional[AestheticScorer] = None
+
+
+def _get_scorer() -> AestheticScorer:
+    global _AESTHETIC_SCORER_SINGLETON
+    if _AESTHETIC_SCORER_SINGLETON is None:
+        _AESTHETIC_SCORER_SINGLETON = AestheticScorer("ML/aesthetic_scorer_v1.pkl")
+    return _AESTHETIC_SCORER_SINGLETON
+
+
+def _aesthetic_score(top: Dict, bottom: Dict, outer: Optional[Dict],
+                     clo_top: float, clo_bottom: float, clo_outer: float = 0.0,
+                     scorer: Optional[AestheticScorer] = None) -> float:
+    scorer = scorer or _get_scorer()
+    return scorer.score(top, bottom, outer, clo_top, clo_bottom, clo_outer)
+
+# -------------------- quick ranking helpers --------------------
+
+def _score_key(c):
+    """Utility for sorting: higher aesthetic, smaller gap."""
+    return (c["score"] - c["gap"]) if c else -1e9
+
+
+def _enumerate_with_outer(base_combo: List[Dict], target_clo: float, outers: List[Dict], topk_outer: int = 10):
+    """Given a 2- or 3-piece combo list, try adding an outer layer to approach target CLO.
+    Returns extended candidates sorted by score.
+    """
+    results: List[Dict] = []
+    for outer in outers[:topk_outer]:
+        clo_total = sum(p.get("clo", 0.0) for p in base_combo) + outer.get("clo", 0.0)
+        top_piece = base_combo[1] if len(base_combo) >= 2 else None
+        bottom_piece = next((p for p in base_combo if "bottom" in p.get("roles", []) or p.get("role") == "bottom"), None)
+        base_piece = base_combo[0] if len(base_combo) == 3 else None
+
+        score = _aesthetic_score(
+            top_piece or base_piece,
+            bottom_piece,
+            outer,
+            _clo(top_piece or base_piece),
+            _clo(bottom_piece),
+            _clo(outer),
+        )
+        gap = abs(clo_total - target_clo)
+        results.append({"combo": base_combo + [outer], "clo": clo_total, "score": score, "gap": gap})
+
+    results.sort(key=_score_key, reverse=True)
+    return results
+
 import numpy as np
 try:
     import joblib
@@ -36,17 +212,17 @@ except Exception:
 # Data containers
 # -----------------------------
 
-# 384 diff + 384 prod + 1 color_dist = 769
+# 384 diff + 384 prod + 1 color_dist + 2 pair_type flags = 771
 FEATURE_NAMES = (
     [f"style_diff_{i}" for i in range(384)]
     + [f"style_prod_{i}" for i in range(384)]
-    + ["color_dist"]
+    + ["color_dist", "is_bb", "is_bm"]
 )
 
 def _to_feature_frame(X: np.ndarray) -> pd.DataFrame:
-    # X shape: (n, 769)
-    if X.shape[1] != 769:
-        raise ValueError(f"Expected 769 features, got {X.shape[1]}")
+    # X shape: (n, 771)
+    if X.shape[1] != 771:
+        raise ValueError(f"Expected 771 features, got {X.shape[1]}")
     return pd.DataFrame(X, columns=FEATURE_NAMES)
 
 # ---------------------------------------------
@@ -404,9 +580,11 @@ def create_feature_vector(item1_id: str, item2_id: str,
     style_diff = (sv1 - sv2).astype(np.float32)
     style_prod = (sv1 * sv2).astype(np.float32)
     color_dist = np.linalg.norm(cv1.astype(np.float32) - cv2.astype(np.float32)).astype(np.float32)
-    feat = np.concatenate([style_diff, style_prod, np.array([color_dist], dtype=np.float32)], axis=0)
-    if feat.shape[0] != 769:
-        raise AssertionError(f"Feature length must be 769, got {feat.shape[0]}")
+    # Append dummy pair-type flags (base_bottom=1, base_mid=0 by default)
+    pair_flags = np.array([1.0, 0.0], dtype=np.float32)  # is_bb, is_bm
+    feat = np.concatenate([style_diff, style_prod, np.array([color_dist], dtype=np.float32), pair_flags], axis=0)
+    if feat.shape[0] != 771:
+        raise AssertionError(f"Feature length must be 771, got {feat.shape[0]}")
     return feat.reshape(1, -1)
 
 # -----------------------------
@@ -415,6 +593,9 @@ def create_feature_vector(item1_id: str, item2_id: str,
 
 def _infer_role_from_type(t: str) -> Optional[str]:
     t = (t or "").lower()
+    # Treat heavy hoodies with pile/fleece as outer layers
+    
+
     if any(k in t for k in ["shirt","t-shirt","top","blouse","jumper","sweater","hoodie","cardigan","vest","camisole","tank"]):
         return "top"
     if any(k in t for k in ["jean","pant","trouser","skirt","short","culotte","legging"]):
@@ -454,6 +635,26 @@ def _load_catalogue() -> Dict[str, Dict[str, Any]]:
 
     
 
+# -----------------------------
+# Role normalisation helper (used by OutfitMapper)
+# -----------------------------
+def normalize_role(item: Dict[str, Any]) -> Optional[str]:
+    roles_explicit = {str(r).strip().lower() for r in (item.get("roles") or []) if r}
+    if "outer" in roles_explicit:
+        return "outer"
+    if "mid-layer" in roles_explicit or "mid" in roles_explicit:
+        return "mid"
+    if "base" in roles_explicit or "top" in roles_explicit:
+        return "base"
+    if "bottom" in roles_explicit or "bottoms" in roles_explicit:
+        return "bottom"
+
+    if item.get("role"):
+        return str(item["role"]).lower()
+
+    return _infer_role_from_type(str(item.get("type", "")))
+
+
 def enrich_items(items: List[Dict[str, Any]], verbose: bool=True) -> List[Dict[str, Any]]:
     """Ensure each item has item_id, role, clo. Attempt to fill from catalogue;
     infer role from type; default clo if missing.
@@ -476,7 +677,9 @@ def enrich_items(items: List[Dict[str, Any]], verbose: bool=True) -> List[Dict[s
         # Role
         role = base.get("role")
         if not role:
-            role = _infer_role_from_type(str(base.get("type","")))
+            # Infer role using both 'type' and 'name' fields for better accuracy (e.g., jeans/shorts in name)
+            combined_txt = f"{base.get('type','')} {base.get('name','')}"
+            role = _infer_role_from_type(str(combined_txt))
             if role:
                 base["role"] = role
                 inferred_role += 1
@@ -540,7 +743,7 @@ def enrich_items(items: List[Dict[str, Any]], verbose: bool=True) -> List[Dict[s
 
 def _score_pair(self, top_id: str, bottom_id: str) -> float:
     
-    feat = create_feature_vector(top_id, bottom_id, self.style_vectors, self.color_vectors)  # (1, 769)
+    feat = create_feature_vector(top_id, bottom_id, self.style_vectors, self.color_vectors)  # (1, 771)
     X_df = _to_feature_frame(feat)
     score = float(self.model.predict(X_df)[0])
     return score
@@ -571,19 +774,180 @@ class OutfitMapper:
         if self.verbose: print(f"[ok] Loaded {len(self.style_vectors)} style vectors and {len(self.color_vectors)} color vectors.")
         if hasattr(self.model, "n_features_in_"):
             nfi = int(getattr(self.model, "n_features_in_", -1))
-            if nfi != 769:
-                print(f"[warn] Model expects {nfi} features; pipeline produces 769. Check training features.")
+            if nfi != 771:
+                print(f"[warn] Model expects {nfi} features; pipeline produces 771. Check training features.")
 
     @staticmethod
     def split_pools(items: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
-        tops = [it for it in items if str(it.get("role","")).lower() == "top"]
-        bottoms = [it for it in items if str(it.get("role","")).lower() == "bottom"]
-        outers = [it for it in items if str(it.get("role","")).lower() == "outer"]
+        tops: List[Dict[str, Any]] = []
+        bottoms: List[Dict[str, Any]] = []
+        outers: List[Dict[str, Any]] = []
+
+        for it in items:
+            primary = normalize_role(it)
+            if primary in {"base", "top"}:
+                tops.append(it)
+            elif primary == "mid":
+                # mid-layers are not tops but may be used later
+                pass
+            elif primary == "bottom":
+                bottoms.append(it)
+            elif primary == "outer":
+                outers.append(it)
+
         return tops, bottoms, outers
 
     @staticmethod
     def _within_clo(target: float, item_clo: float, tol: float = 0.5) -> bool:
         return (abs(item_clo - target) <= tol) or (item_clo <= target + tol)
+
+    # ---- helper: aesthetic scoring wrapper (uses module-level scorer) ----
+    def _aesthetic_score(self, top: Optional[Dict[str, Any]] = None,
+                         bottom: Optional[Dict[str, Any]] = None,
+                         outer: Optional[Dict[str, Any]] = None,
+                         base: Optional[Dict[str, Any]] = None) -> float:
+        """Score a (top, bottom[, outer]) combination.
+        If a base layer is provided, treat it as the visible top when a mid/top
+        layer is not explicitly given.
+        """
+        scoring_top = top if top is not None else base
+        if scoring_top is None or bottom is None:
+            return -1e9
+        return _aesthetic_score(
+            scoring_top,
+            bottom,
+            outer,
+            _clo(scoring_top),
+            _clo(bottom),
+            _clo(outer),
+        )
+
+    # ---- helper: ranking key (yüksek estetik, düşük ısı boşluğu daha iyi) ----
+    def _score_key(self, c: Optional[Dict[str, Any]]) -> float:
+        return (c["score"] - c["gap"]) if c else -1e9
+
+    # ---- helper: outer ekleyerek 4. parçayı dene (2'li veya 3'lü taban kombin üzerine) ----
+    def _enumerate_with_outer(self, base_combo: List[Dict[str, Any]],
+                              target_clo: float,
+                              outers: List[Dict[str, Any]],
+                              topk_outer: int = 15) -> List[Dict[str, Any]]:
+        results: List[Dict[str, Any]] = []
+
+        # bottom'ı bul (roles listesi yoksa eski 'role' alanına da bak)
+        bottom_in_combo: Optional[Dict[str, Any]] = None
+        for p in base_combo:
+            roles = p.get("roles", [])
+            if not roles and p.get("role"):
+                roles = [p["role"]]
+            roles_lower = {str(r).lower() for r in roles}
+            if "bottom" in roles_lower:
+                bottom_in_combo = p
+                break
+
+        # top/base parçaları ayır
+        top_piece: Optional[Dict[str, Any]] = None
+        base_piece: Optional[Dict[str, Any]] = None
+        if len(base_combo) == 3:
+            # [base, mid, bottom]
+            base_piece = base_combo[0]
+            top_piece = base_combo[1]
+        elif len(base_combo) == 2:
+            # [top, bottom]
+            top_piece = base_combo[0]
+
+        for outer in outers[:topk_outer]:
+            clo_total = sum(p.get("clo", 0.0) for p in base_combo) + outer.get("clo", 0.0)
+            score = self._aesthetic_score(
+                top=top_piece,
+                bottom=bottom_in_combo,
+                outer=outer,
+                base=base_piece,
+            )
+            gap = abs(clo_total - target_clo)
+            results.append({
+                "combo": base_combo + [outer],
+                "clo": clo_total,
+                "score": score,
+                "gap": gap,
+            })
+        results.sort(key=self._score_key, reverse=True)
+        return results
+
+    # ---- çekirdek: 2'li → 3'lü → (gerekirse) 4'lü arama stratejisi ----
+    def _build_candidates(self, items: List[Dict[str, Any]], weather: Dict[str, Any],
+                          topk: int = 5, pool_limit: int = 200) -> Tuple[List[Dict[str, Any]], float]:
+        # target clo (module-level estimate handles external get_target_clo if present)
+        target_clo = estimate_target_clo(weather)
+
+        # roles guard: eski 'role' alanından fallback ile list oluştur
+        def roles_of(i: Dict[str, Any]) -> List[str]:
+            r = i.get("roles")
+            if r:
+                return [str(x).lower() for x in r]
+            return [str(i["role"]).lower()] if i.get("role") else []
+
+        # Role-based pools with hygiene rules:
+        # - Do not treat items that are also 'outer' as bases.
+        # - Do not use dresses as mid-layers; keep mids to layering pieces.
+        bases_all = [i for i in items if "base" in roles_of(i)]
+        bases = [i for i in bases_all if "outer" not in roles_of(i)] or bases_all
+
+        def _is_dress(it: Dict[str, Any]) -> bool:
+            txt = (str(it.get("type", "")) + " " + str(it.get("name", ""))).lower()
+            return "dress" in txt
+
+        mids_raw = [i for i in items if "mid-layer" in roles_of(i)]
+        mids = [i for i in mids_raw if ("outer" not in roles_of(i)) and (not _is_dress(i))] or mids_raw
+
+        outers  = [i for i in items if "outer"     in roles_of(i)]
+        bottoms = [i for i in items if "bottom"    in roles_of(i)]
+
+        candidates: List[Dict[str, Any]] = []
+
+        # --- 2'li kombinler: yalnızca "base" olabilen üst + bottom (mid-layer tek başına üst değildir)
+        for top in bases:
+            for bottom in bottoms:
+                clo = top.get("clo", 0.0) + bottom.get("clo", 0.0)
+                score = self._aesthetic_score(top=top, bottom=bottom)
+                gap = abs(clo - target_clo)
+                candidates.append({"combo": [top, bottom], "clo": clo, "score": score, "gap": gap})
+
+        candidates.sort(key=self._score_key, reverse=True)
+        candidates = candidates[:pool_limit]  # outer denemeleri için geniş havuz
+
+        # --- 3'lü kombinler: base + mid + bottom  (cardigan burada devreye girer)
+        layered_candidates: List[Dict[str, Any]] = []
+        base_topk   = sorted(bases,   key=lambda i: float(i.get("clo", 0.0)), reverse=True)[:20]
+        mid_topk    = sorted(mids,    key=lambda i: float(i.get("clo", 0.0)), reverse=True)[:20]
+        bottom_topk = sorted(bottoms, key=lambda i: float(i.get("clo", 0.0)), reverse=True)[:20]
+
+        for base in base_topk:
+            for mid in mid_topk:
+                if base.get("item_id") == mid.get("item_id"):
+                    continue  # aynı ürünü iki rolde kullanma
+                for bottom in bottom_topk:
+                    clo = base.get("clo", 0.0) + mid.get("clo", 0.0) + bottom.get("clo", 0.0)
+                    if clo < target_clo * 0.6:
+                        continue  # aşırı soğuk kombinleri ele
+                    score = self._aesthetic_score(top=mid, bottom=bottom, base=base)
+                    gap = abs(clo - target_clo)
+                    layered_candidates.append({"combo": [base, mid, bottom], "clo": clo, "score": score, "gap": gap})
+
+        layered_candidates.sort(key=self._score_key, reverse=True)
+
+        # 2'li + 3'lü tek havuzda
+        pool = (candidates + layered_candidates)[: max(pool_limit, topk * 10)]
+
+        # --- Outer aşaması: ortam soğuksa veya kombin yetersizse 4'lü dene
+        need_outer_env = target_clo >= 1.0  # basit eşik; istersen hava/yağmur/rüzgarla zenginleştir
+        extended: List[Dict[str, Any]] = []
+        for cand in pool[:50]:
+            if need_outer_env or (cand["clo"] < target_clo * 0.95):
+                extended += self._enumerate_with_outer(cand["combo"], target_clo, outers, topk_outer=15)
+
+        all_cands = pool + extended
+        all_cands.sort(key=self._score_key, reverse=True)
+        return all_cands[:topk], target_clo
 
     def filter_by_weather(self, items: List[Dict[str, Any]], weather: Dict[str, Any], need_outer: Optional[bool]=None
                           ) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]], float, bool]:
@@ -596,6 +960,8 @@ class OutfitMapper:
         tops_f = [t for t in tops if self._within_clo(target*0.5, float(t.get("clo", 0.3)), tol=0.6)]
         bottoms_f = [b for b in bottoms if self._within_clo(target*0.5, float(b.get("clo", 0.3)), tol=0.6)]
         outers_f = [o for o in outers if _clo(o) >= 0.2]
+
+        
 
         # ---- Cold guards: zayıf kumaşları eleyip uzun kolu zorunlu kıl ----
         def _blob(it):
@@ -625,10 +991,8 @@ class OutfitMapper:
             return any(k in t for k in ["wool", "fleece", "thermal", "lined"]) or "skort" in t  # skort built-in shorts
 
         if very_cold or (cold and wet):
-            pre_b = bottoms_f[:]
-            bottoms_f = [b for b in bottoms_f if (not _is_skirt(b)) or _is_warm_bottom(b)]
-            if not bottoms_f:
-                bottoms_f = pre_b  # don't empty the pool completely
+            # deep cold + wet: skirt needs warmth; shorts zaten eleniyor
+            bottoms_f = [b for b in bottoms_f if ((not _is_skirt(b)) or _is_warm_bottom(b))]
 
         if cold:
             weak_tops: List[Dict[str, Any]] = []
@@ -1078,6 +1442,48 @@ class OutfitMapper:
         scored_base.sort(key=lambda x: x[0], reverse=True)
         best_score, best_top, best_bottom = scored_base[0]
 
+        # -------------------------
+        # (YENİ) Mid-layer seçimi
+        # -------------------------
+        def _roles_of(i: Dict[str, Any]) -> list:
+            r = i.get("roles", [])
+            if r:
+                return [str(x).lower() for x in r]
+            return [str(i.get("role")).lower()] if i.get("role") else []
+
+        def _is_dress(it: Dict[str, Any]) -> bool:
+            txt = (str(it.get("type", "")) + " " + str(it.get("name", ""))).lower()
+            return "dress" in txt
+
+        mids_all = [i for i in items if any(x in {"mid-layer", "mid"} for x in _roles_of(i))]
+        # Exclude outers and dresses from mid-layer pool; apply light thermal threshold
+        mids_all = [m for m in mids_all if ("outer" not in _roles_of(m)) and (not _is_dress(m)) and _clo(m) >= 0.2]
+
+        mid_selected = None
+        if mids_all:
+            # 1) Şu anki 2'li kombin ile hedef CLO farkını (gap2) ölç
+            gap2 = abs(estimate_target_clo(weather) - (_clo(best_top) + _clo(best_bottom)))
+
+            # 2) Mid ekleyerek skor oluştur: mevcut _aesthetic_score'u kullan
+            scored_mids = []
+            for m in mids_all:
+                if m.get("item_id") == best_top.get("item_id"):
+                    continue  # aynı ürünü iki rolde kullanma
+                sc_mid = self._aesthetic_score(top=m, bottom=id_to_bottom[best_bottom["item_id"]], base=best_top)
+                clo_mid_total = _clo(best_top) + _clo(m) + _clo(best_bottom)
+                gap3 = abs(estimate_target_clo(weather) - clo_mid_total)
+                # mevcut sıralama anahtarına benzer: yüksek estetik, düşük gap
+                scored_mids.append((sc_mid - gap3, sc_mid, gap3, m, clo_mid_total))
+
+            if scored_mids:
+                scored_mids.sort(key=lambda x: x[0], reverse=True)
+                best_mid = scored_mids[0]
+                # Yenisi: soğukta daha agresif mid seçimi
+                # target clo yüksekse (>=1.0) veya iyileşme ufak da olsa (>=0.05) mid ekle
+                tgt = estimate_target_clo(weather)
+                if (tgt >= 1.0) or (gap2 - best_mid[2] >= 0.05):
+                    mid_selected = best_mid[3]
+
         best_outer = None
         best_outer_score = None
         if outer_required and outers:
@@ -1114,28 +1520,54 @@ class OutfitMapper:
                 best_outer = outers[best_idx]
                 best_outer_score = float(adjusted_scores[best_idx])
 
+        # ------------------------------
+        # Selected payload (2/3/4 parça)
+        # ------------------------------
+        visible_top = mid_selected if mid_selected is not None else best_top
+
+        # toplam clo ve thermal gap
+        sel_top_clo = _clo(visible_top)
+        sel_base_clo = _clo(best_top)  # base/top (mid olsa da base var)
+        sel_bottom_clo = _clo(best_bottom)
+        sel_outer_clo = _clo(best_outer) if best_outer is not None else 0.0
+
+        if mid_selected is not None:
+            total_clo = sel_base_clo + _clo(mid_selected) + sel_bottom_clo + sel_outer_clo
+        else:
+            total_clo = sel_top_clo + sel_bottom_clo + sel_outer_clo
+
+        gap = float(target_clo) - float(total_clo)
+
+        selected_block = {
+            "base": best_top,              # iç katman (base)   # ekranda görünen (mid varsa mid, yoksa top)             # şema uyumu için ayrıca base
+            "mid": mid_selected,          # None ise 2 parça
+            "bottom": best_bottom,
+            "outer": best_outer,
+            "scores": {
+                "base_pair_score": float(best_score),
+                "outer_pair_score": (None if best_outer is None else float(best_outer_score or 0.0)),
+            },
+        }
+
         payload = {
-            "selected": Outfit(best_top, best_bottom, best_outer, float(best_score), (None if best_outer is None else float(best_outer_score or 0.0))).to_jsonable(),
+            "selected": selected_block,
             "meta": {
                 "target_clo": float(target_clo),
                 "outer_required": bool(outer_required),
                 "evaluated_pairs": int(len(scored_base)),
+                "total_clo": round(float(total_clo), 2),
+                "thermal_gap": round(float(max(0.0, gap)), 2),
             },
         }
+
         # ------------------------------
         # Thermal validation & advice
         # ------------------------------
-        sel_top_clo = _clo(best_top)
-        sel_bottom_clo = _clo(best_bottom)
-        sel_outer_clo = _clo(best_outer) if best_outer is not None else 0.0
-        total_clo = sel_top_clo + sel_bottom_clo + sel_outer_clo
-        gap = float(target_clo) - float(total_clo)
-
-        # Attach diagnostics to meta
+        # Use the already computed total_clo (which includes mid if present) and gap
         max_outer_available = max([_clo(o) for o in outers], default=0.0) if outers else 0.0
         payload["meta"].update({
-            "total_clo": round(total_clo, 2),
-            "thermal_gap": round(max(0.0, gap), 2),
+            "total_clo": round(float(total_clo), 2),
+            "thermal_gap": round(float(max(0.0, gap)), 2),
             "max_outer_clo_available": round(max_outer_available, 2),
         })
 
@@ -1238,3 +1670,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
