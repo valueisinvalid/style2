@@ -18,13 +18,17 @@ import re
 from dataclasses import dataclass
 from itertools import product
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Any
+from typing import Dict, List, Optional, Tuple, Any, Set
 import pandas as pd
 
 # ==== Aesthetic scorer hook ==============================================
 import os, pickle
 import numpy as np
 import itertools
+
+# --- global vector stores to reuse inside AestheticScorer ---
+STYLE_VECS: Dict[str, np.ndarray] = {}
+COLOR_VECS: Dict[str, np.ndarray] = {}
 
 
 class AestheticScorer:
@@ -107,15 +111,24 @@ class AestheticScorer:
         return feats
 
     def score(self, top, bottom, outer, clo_top, clo_bottom, clo_outer):
-        if self.model is not None:
-            X = self._build_features(top, bottom, outer, clo_top, clo_bottom, clo_outer).reshape(1, -1)
+        """
+        Use the same 771-dim feature pipeline as the trained LGBM model.
+        Model was trained on *pairs* (top,bottom); 'outer' burada *skora*
+        dahil edilmez (dahil etmek istiyorsan ayrı bir outer modeli gerekir).
+        """
+        # model yüklüyse ve global vektörler hazırsa → 771-dim feature üret
+        if self.model is not None and STYLE_VECS and COLOR_VECS:
             try:
-                y = self.model.predict(X)
+                tid = str(top.get("item_id"))
+                bid = str(bottom.get("item_id"))
+                feat = create_feature_vector(tid, bid, STYLE_VECS, COLOR_VECS)  # shape (1,771)
+                X_df = _to_feature_frame(feat)
+                y = self.model.predict(X_df)
                 return float(y[0])
             except Exception as e:
-                print(f"[warn] Model.predict failed; using heuristic. err={e}")
+                print(f"[warn] AestheticScorer: LGBM predict failed; using heuristic. err={e}")
 
-        # Heuristic fallback
+        # --- Heuristic fallback (outer/top-bottom örtüşmeleri vs.) ---
         def get(it, key):
             return (it or {}).get(key, "")
 
@@ -131,7 +144,6 @@ class AestheticScorer:
         if outer and any(k in o_type for k in ["jacket", "coat", "blazer"]):
             base_bonus += 0.1
 
-        # color harmony heuristic
         neutrals = ["black", "white", "beige", "cream", "grey", "navy", "charcoal"]
         col_t = get(top, "color").lower()
         col_b = get(bottom, "color").lower()
@@ -139,7 +151,6 @@ class AestheticScorer:
         neutral_frac = sum(any(n in c for n in neutrals) for c in [col_t, col_b, col_o if outer else ""]) / (3 if outer else 2)
         harmony = 0.4 + 0.4 * neutral_frac
 
-        # clo balance
         clo_tot = (clo_top or 0) + (clo_bottom or 0) + (clo_outer or 0)
         clo_top_ratio = (clo_top or 0) / (clo_tot + 1e-6)
         clo_balance = 0.4 if clo_top_ratio > 0.75 else 0.6
@@ -515,10 +526,18 @@ def _resolve_existing_path(candidates: List[Path]) -> Optional[Path]:
     return None
 
 def _fallback_target_clo(weather: Dict[str, Any]) -> float:
-    t = float(weather.get("temp_c", 18.0))
-    rh = float(weather.get("rh", weather.get("humidity", 50.0)))
-    wind = float(weather.get("wind", weather.get("wind_kmh", 5.0)))
-    rain = float(weather.get("rain", weather.get("precip_mm", 0.0)))
+    def _safe_float(val, default):
+        try:
+            if val is None or val == "":
+                return float(default)
+            return float(val)
+        except Exception:
+            return float(default)
+
+    t = _safe_float(weather.get("temp_c"), 18.0)
+    rh = _safe_float(weather.get("rh", weather.get("humidity")), 50.0)
+    wind = _safe_float(weather.get("wind", weather.get("wind_kmh")), 5.0)
+    rain = _safe_float(weather.get("rain", weather.get("precip_mm")), 0.0)
 
     # Yağış ihtimali veya mevcut yağış bilgisi
     is_snow_or_rain: bool = bool(weather.get("is_rain", False)) or float(weather.get("precip_prob", 0.0)) >= 60.0 or rain >= 0.5
@@ -774,8 +793,13 @@ class OutfitMapper:
         if self.verbose: print(f"[ok] Loaded {len(self.style_vectors)} style vectors and {len(self.color_vectors)} color vectors.")
         if hasattr(self.model, "n_features_in_"):
             nfi = int(getattr(self.model, "n_features_in_", -1))
-            if nfi != 771:
+            if nfi != 771 and self.verbose:
                 print(f"[warn] Model expects {nfi} features; pipeline produces 771. Check training features.")
+
+        # expose to AestheticScorer (771-dim pipeline)
+        global STYLE_VECS, COLOR_VECS
+        STYLE_VECS = self.style_vectors
+        COLOR_VECS = self.color_vectors
 
     @staticmethod
     def split_pools(items: List[Dict[str, Any]]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, Any]]]:
@@ -1191,7 +1215,7 @@ class OutfitMapper:
             print(f"[thermals] target_clo={target:.2f} -> pools: tops={len(tops_f)}, bottoms={len(bottoms_f)}, outers={len(outers_f)} (need_outer={outer_required})")
         return tops_f, bottoms_f, outers_f, target, outer_required
 
-    def _score_batch_pairs(self, pairs: List[Tuple[str, str]], batch_size: int=1024) -> List[float]:
+    def _score_batch_pairs(self, pairs: List[Tuple[str, str]], batch_size: int=1024, pair_type_hint: str="base_bottom") -> List[float]:
         scores: List[float] = []
         i = 0
         while i < len(pairs):
@@ -1205,8 +1229,52 @@ class OutfitMapper:
                 except Exception as e:
                     if self.verbose: print(f"[skip] pair ({a},{b}) -> {e}")
             if feats:
-                X = np.vstack(feats)
-                preds = self.model.predict(X)
+                X = np.vstack(feats).astype(np.float32)
+
+                # --- Ensure we have expected 771-dim features ---
+                if X.shape[1] != 771:
+                    if self.verbose:
+                        print(f"[fix] Rebuilding features to 771 dims (had {X.shape[1]}) for {len(chunk)} pairs using style/color vectors...")
+
+                    def _get_vec(src: Dict[str, np.ndarray], key: str):
+                        v = src.get(key)
+                        return np.asarray(v, dtype=np.float32) if v is not None else None
+
+                    rebuilt = []
+                    for (aid, bid) in chunk:
+                        sv_a = _get_vec(self.style_vectors, aid)
+                        sv_b = _get_vec(self.style_vectors, bid)
+                        cv_a = _get_vec(self.color_vectors, aid)
+                        cv_b = _get_vec(self.color_vectors, bid)
+
+                        if (sv_a is None) or (sv_b is None):
+                            sd = np.zeros(384, dtype=np.float32)
+                            sp = np.zeros(384, dtype=np.float32)
+                        else:
+                            sd = (sv_a - sv_b).astype(np.float32)
+                            sp = (sv_a * sv_b).astype(np.float32)
+
+                        if (cv_a is None) or (cv_b is None):
+                            cd = np.array([0.0], dtype=np.float32)
+                        else:
+                            cd = np.array([float(np.linalg.norm(cv_a - cv_b))], dtype=np.float32)
+
+                        # pair type one-hot flags
+                        if pair_type_hint == "base_mid":
+                            pt = np.array([0.0, 1.0], dtype=np.float32)
+                        else:
+                            pt = np.array([1.0, 0.0], dtype=np.float32)
+
+                        rebuilt.append(np.concatenate([sd, sp, cd, pt], axis=0))  # 771
+                    X = np.vstack(rebuilt).astype(np.float32)
+
+                # Predict (try DataFrame first for named columns)
+                try:
+                    X_df = _to_feature_frame(X)
+                    preds = self.model.predict(X_df)
+                except Exception:
+                    preds = self.model.predict(X)
+
                 out = [None]*len(chunk)
                 k=0
                 for j in valid_idx:
@@ -1595,7 +1663,46 @@ class OutfitMapper:
         # Optionally return the top-K base pairs (and outer, if needed)
         # -------------------------------------------------------------
         if return_candidates and return_candidates > 0:
-            top_k = scored_base[:return_candidates]
+            # --- Enforce diversity: avoid repeating the same top or bottom family ---
+            def _bottom_family(b: Dict[str, Any]):
+                """Rough grouping of bottoms by type + denim flag + length category."""
+                blob = _txt_blob(b)
+                is_denim = ("denim" in blob) or ("jean" in blob)
+
+                # crude length classification
+                if ("mini" in blob) or ("short" in blob):
+                    length = "short"
+                elif ("midi" in blob) or ("calf" in blob):
+                    length = "midi"
+                elif ("ankle length" in blob) or (("long" in blob) and ("length" in blob)):
+                    length = "long"
+                else:
+                    length = "other"
+
+                return (str(b.get("type", "")).lower(), is_denim, length)
+
+            diverse: List[Tuple[float, Dict[str, Any], Dict[str, Any]]] = []
+            seen_tops: Set[str] = set()
+            seen_bottom_fams: Set[Tuple[str, bool, str]] = set()
+
+            for (s, t, b) in scored_base:
+                t_id = t.get("item_id")
+                bfam = _bottom_family(b)
+
+                if t_id in seen_tops:
+                    continue
+                if bfam in seen_bottom_fams:
+                    continue
+
+                diverse.append((s, t, b))
+                seen_tops.add(t_id)
+                seen_bottom_fams.add(bfam)
+
+                if len(diverse) >= return_candidates:
+                    break
+
+            top_k = diverse
+
             cand_list = []
             for (s, t, b) in top_k:
                 cand: Dict[str, Any] = {"top": t, "bottom": b, "score": float(s)}

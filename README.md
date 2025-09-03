@@ -11,6 +11,32 @@ Style2 is an end-to-end, _Python-only_ toolkit that:
 
 The repository is organised as a collection of _independent but chain-able_ modules so you can plug only the parts you need.
 
+### Pipeline overview
+
+```mermaid
+graph TD
+    A[hm_scrape.py\nScrape products] --> B[out.json]
+    B --> C[ML/feature_extraction.py\nColor & Style vectors]
+    C --> D[color_vectors.pkl & style_vectors.pkl & features_v1.npz]
+    D --> E[ML/train_lgbm_regressor.py\nLightGBM aesthetic scorer]
+    D --> F[ML/train_compat.py\nPairwise compat model]
+    subgraph Weather
+        G[logic/fetch_weather.py] --> H[logic/weather_scoring.py\nTarget Clo]
+    end
+    D --> I[logic/outfit_mapper_1.py\nSuggest outfit]
+    H --> I
+    E --> I
+    F --> I
+```
+
+1. **Scrape** → `hm_scrape.py` saves raw product JSON (`out.json`).
+2. **Embed** → `ML/feature_extraction.py` converts JSON into color & style vectors (`*.pkl`, `features_v1.npz`).
+3. **Model** (optional) – train ML components:
+   * `ML/train_lgbm_regressor.py` → `aesthetic_scorer_v1.pkl`
+   * `ML/train_compat.py`        → `compat_model.joblib`
+4. **Weather** → `logic/fetch_weather.py` + `logic/weather_scoring.py` map live conditions to a **target Clo**.
+5. **Recommend** → `logic/outfit_mapper_1.py` combines vectors, ML scorers & weather target to build a complete outfit.
+
 ---
 
 ## Repository layout
@@ -20,11 +46,17 @@ style2/
 ├─ hm_scrape.py               # Selenium-based single/batch scraper (JSON out)
 ├─ hm_scrape_waits.py         # Variant with extra fixed waits between page loads
 ├─ scraper_batch.py           # Tiny wrapper to launch many concurrent scrapes
-├─ dataset_ayk/               # Data cleaning helpers & graded labels
-│  └─ csv_data_cleaning.py
+├─ dataset_ayk/               # Label cleaning & annotation helpers
+│  ├─ csv_data_cleaning.py
+│  ├─ add_item_types.py
+│  ├─ annotate_pair_type.py
+│  ├─ dedupe_validate_labels.py
+│  └─ make_clean_from_roles.py
 ├─ ML/
 │  ├─ feature_extraction.py   # Color + style & other feature generator
+│  ├─ build_features_with_pairtype.py  # Pair-aware feature bundle builder
 │  ├─ feature_engineering.py  # Extra utilities for tabular ML
+│  ├─ cli_labeling.py         # TUI for fast pairwise label annotation
 │  ├─ train_compat.py         # Outfit compatibility model trainer
 │  ├─ train_lgbm_regressor.py # Thermal Clo regressor (experimental)
 │  ├─ color_vectors.pkl       # {item_id: [L,a,b]}
@@ -33,8 +65,8 @@ style2/
 ├─ logic/
 │  ├─ fetch_weather.py        # Meteoblue API wrapper
 │  ├─ weather_scoring.py      # Fabric→Clo & weather→target Clo maths
-│  ├─ outfit_mapper.py        # Rule-based outfit builder (current)
-│  ├─ outfit_mapper_1.py      # Legacy prototype of outfit builder
+│  ├─ outfit_mapper.py        # Simple rule-based outfit builder (baseline)
+│  ├─ outfit_mapper_1.py      # Advanced outfit builder (thermal + aesthetic, default)
 │  └─ run_batch_tests.py      # Regression & demo harness
 └─ README.md                  # ← you are here
 ```
@@ -100,22 +132,26 @@ These scores are completely rule-based and do **not** require ML.
 
 ---
 
-## 4. Outfit generation  (`logic/outfit_mapper.py`)
+## 4. Outfit generation  (`logic/outfit_mapper_1.py` – default)
 
 Given:
 
 * current weather (or a `target_clo` directly), and
 * a catalogue of previously scored garments (Clo, RET, type, role)
 
-`outfit_mapper.py` assembles a full outfit that:
+The **`outfit_mapper_1`** engine supersedes the simpler `outfit_mapper.py` by:
 
-1. Achieves total Clo ≈ target ± tolerance
-2. Avoids type clashes (no two outer layers, bottoms vs one-piece dress rules, etc.)
-3. Minimises breathability mismatch & keeps RET comfortable
+* Seamlessly enriching sparse items with cached vectors/metadata from `ML/features_v1.npz`.
+* Integrating a _LightGBM_-based **Aesthetic Scorer** that rates the visual harmony of the assembled outfit.  
+  * The regressor is trained via `ML/train_lgbm_regressor.py` on a 771-dim feature space that concatenates style & colour embeddings plus pairwise cosine similarities.
+  * The resulting model is stored as `ML/aesthetic_scorer_v1.pkl` and auto-loaded at runtime. When the file is missing it falls back to a lightweight heuristic.
+* Relaxing thermal constraints when Clo estimates are missing so that a suggestion is _always_ produced.
+
+> If you still need the purely rule-based behaviour you can import `logic.outfit_mapper` explicitly.
 
 Run a self-contained demo:
 ```bash
-python -m logic.outfit_mapper --demo
+python -m logic.outfit_mapper_1 --demo
 ```
 
 ---
@@ -123,6 +159,56 @@ python -m logic.outfit_mapper --demo
 ## 5. Batch test harness  (`logic/run_batch_tests.py`)
 
 A tiny script that stress-tests the outfit mapper across a weather grid and prints summary stats. Useful for sanity checks when you tweak scoring rules.
+
+---
+
+## 6. Data labelling helpers  (`dataset_ayk/` & `ML/cli_labeling.py`)
+
+A suite of scripts to clean raw crowdsourced judgments, validate consistency, and interactively annotate garment pairs.
+
+• `dataset_ayk/csv_data_cleaning.py` – general column normaliser  
+• `dataset_ayk/add_item_types.py` – map product categories → high-level garment roles  
+• `dataset_ayk/annotate_pair_type.py` – label **pair-types** (e.g. *top–bottom*, *outer–anything*)  
+• `dataset_ayk/dedupe_validate_labels.py` – fuzzy-match duplicates and surface conflicts  
+• `dataset_ayk/make_clean_from_roles.py` – final tidy export
+
+For quick manual annotation use the text-based UI:
+
+```bash
+python ML/cli_labeling.py --csv dataset_ayk/ground_truth_labels_cleaned.csv
+```
+
+---
+
+## 7. Aesthetic compatibility model (LightGBM)  (`ML/train_lgbm_regressor.py`)
+
+`train_lgbm_regressor.py` fits a **LightGBM** gradient-boosted regressor that scores the _visual harmony_ of a (top, bottom, ±outer) outfit on a 1–5 scale.
+
+Pipeline recap:
+
+1. Run `ML/feature_extraction.py` to obtain `features_v1.npz` (style + colour vectors).
+2. Build the 771-dim outfit feature matrix from the vectors and pairwise sims (see code comments).
+3. Launch training:
+
+```bash
+python ML/train_lgbm_regressor.py \
+       --data training_data.npz \
+       --out ML/aesthetic_scorer_v1.pkl
+```
+
+At runtime `logic.outfit_mapper_1` checks for `ML/aesthetic_scorer_v1.pkl` and loads it automatically. If the file is absent it falls back to a rule-of-thumb score so the pipeline keeps working.
+
+---
+
+## 8. Pair-type feature builder  (`ML/build_features_with_pairtype.py`)
+
+Generates an extended `features_pairtype.npz` bundle that augments the base vectors with categorical **pair-type** one-hots so that the compatibility model can learn type-specific interactions.
+
+Run:
+
+```bash
+python ML/build_features_with_pairtype.py --input out.json
+```
 
 ---
 
@@ -143,7 +229,7 @@ python ML/feature_extraction.py --input out.json
 
 # 4) generate outfit suggestion for a location
 python - <<'PY'
-from logic.outfit_mapper import suggest_outfit
+from logic.outfit_mapper_1 import suggest_outfit
 from logic.weather_scoring import get_meteoblue_current
 
 items_file = 'ML/features_v1.npz'  # or load your DB

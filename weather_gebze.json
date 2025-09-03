@@ -1,0 +1,8 @@
+{
+  "temp_c": 23.42,
+  "rh": 76,
+  "wind_kmh": 4.97,
+  "precip_prob": 0,
+  "is_rain": false,
+  "source": "meteoblue"
+}
